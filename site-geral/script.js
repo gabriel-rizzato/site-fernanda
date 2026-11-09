@@ -5,7 +5,7 @@
   Não use número de agência ou de terceiros.
   Defina GESTATION_URL somente quando a outra página estiver publicada.
 */
-const WHATSAPP_NUMBER = '';
+const WHATSAPP_NUMBER = '5511988323140';
 const GESTATION_URL = '';
 const WA_MESSAGE = 'Olá, Fernanda! Conheci seu site e gostaria de saber mais sobre o atendimento de psicanálise online. Poderia me explicar como funciona e quais são as condições?';
 

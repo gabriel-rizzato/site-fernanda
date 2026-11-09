@@ -3,7 +3,7 @@
  * Nunca substituir por telefone de terceiros ou números não validados.
  * Exemplo de formato (não é telefone real): 55DDDNÚMERO.
  */
-const WHATSAPP_NUMBER = '';
+const WHATSAPP_NUMBER = '5511988323140';
 const WHATSAPP_TEXT = 'Olá, Fernanda! Conheci seu trabalho pela página sobre gestação e puerpério. Gostaria de saber mais sobre o acompanhamento e como funcionam as sessões online.';
 
 const nav = document.querySelector('#navegacao');
