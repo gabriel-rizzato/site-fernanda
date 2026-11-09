@@ -271,7 +271,7 @@ h3,.therapy-intro h3,.online-text h3,.about-content h3,.info-card h3,.health-adv
 /* ===== Integração hero + "Você não está sozinha" (07/11/2026) =====
    hero_onda.webp: imagem do hero com a parte abaixo da onda transparente.
    A seção seguinte sobe por baixo do hero e aparece através da curva. */
-.hero{position:relative;z-index:2;background:transparent url('../assets/hero_onda.webp') center bottom/cover no-repeat;min-height:max(700px,46.9vw)}
+.hero{position:relative;z-index:2;background:transparent url('../assets/hero_onda.webp?v=5') center bottom/cover no-repeat;min-height:max(700px,46.9vw)}
 .hero-shade{display:none}
 .embrace{position:relative;z-index:1;margin-top:calc(-1 * max(174px,11.7vw))}
 .embrace-feature{padding-top:max(174px,11.7vw);min-height:calc(610px + max(174px,11.7vw))}
@@ -284,3 +284,464 @@ h3,.therapy-intro h3,.online-text h3,.about-content h3,.info-card h3,.health-adv
   .embrace-copy{padding-top:470px}
 }
 @media(max-width:390px){.hero{min-height:840px}}
+
+/* ===== V2 · Sobre: foto retangular com moldura de linhas finas (07/11/2026) ===== */
+.about{min-height:0;padding:110px 0 120px;display:block}
+.about-photo-wrap{position:absolute;z-index:1;left:max(28px,calc((100vw - 1210px)/2));top:50%;bottom:auto;transform:translateY(-50%);width:min(500px,40vw);height:auto;aspect-ratio:4/5;clip-path:none;background:none;overflow:visible}
+.about-photo-wrap img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:52% 22%;border-radius:4px;box-shadow:0 22px 50px rgba(107,42,54,.16);-webkit-mask-image:none;mask-image:none}
+.about-photo-wrap:before,.about-photo-wrap:after{content:"";display:block;position:absolute;pointer-events:none;border:1px solid rgba(107,42,54,.38);border-radius:6px;background:none}
+.about-photo-wrap:before{inset:-16px;z-index:0}
+.about-photo-wrap:after{inset:22px -32px -32px 22px;z-index:0;border-color:rgba(201,141,147,.75)}
+.about-container{display:flex;justify-content:flex-end;min-height:min(625px,50vw);align-items:center}
+.about-content{width:46%;padding:0}
+@media(max-width:980px){
+  .about-photo-wrap{width:42vw}
+  .about-content{width:48%}
+}
+@media(max-width:700px){
+  .about{padding:60px 0 80px}
+  .about-photo-wrap{position:relative;left:auto;top:auto;transform:none;width:calc(100% - 72px);margin:16px auto 0;aspect-ratio:4/4.6}
+  .about-photo-wrap:after{inset:18px -22px -22px 18px}
+  .about-container{display:block;min-height:0}
+  .about-content{width:100%;padding:70px 0 0}
+}
+
+/* v2: Sobre, foto nítida centralizada e espaçamento equilibrado */
+.about{padding:120px 0}
+.about-container{width:min(1060px,calc(100% - 112px));min-height:560px;align-items:center;justify-content:flex-end}
+.about-photo-wrap{left:calc((100vw - min(1060px,100vw - 112px))/2 + 16px);width:440px;aspect-ratio:4/5}
+.about-photo-wrap img{object-position:50% 20%}
+.about-content{width:500px;max-width:100%}
+.about-content .eyebrow{margin:0 0 18px}
+.about-content h2{margin:0 0 10px}
+.about-content .accent-line{margin:26px 0 28px}
+.about-content h3{margin:0 0 16px}
+.about-content .lead{margin:0 0 14px;line-height:1.65}
+.about-content .read-more{margin-top:28px}
+@media(max-width:1180px){.about-photo-wrap{width:38vw}.about-content{width:46%}}
+@media(max-width:980px){.about{padding:90px 0}.about-container{min-height:0}.about-photo-wrap{width:38vw;left:28px}.about-content{width:50%}}
+@media(max-width:700px){
+.about{padding:60px 0 80px}
+.about-container{width:calc(100% - 36px);min-height:0;display:block}
+.about-photo-wrap{position:relative;left:auto;top:auto;transform:none;width:calc(100% - 72px);margin:16px auto 0;aspect-ratio:4/5}
+.about-content{width:100%;max-width:none;padding:70px 0 0}}
+
+/* =========================================================
+   ALTERAÇÕES DO DOCUMENTO "alterações.docx" (07/11/2026)
+   Backup do CSS anterior: css/style-v2-antes-alteracoes.css
+   ========================================================= */
+
+/* 1. Menu: 4 links (sem "Acolhimento"), espaçamento mais generoso */
+.site-nav{gap:44px;padding-left:44px}
+@media(max-width:1230px){.site-nav{gap:30px;padding-left:30px}}
+@media(max-width:980px){.site-nav{gap:0;padding-left:35px}}
+
+/* 2. Coração mais afastado do título e início da linha esfumado */
+.embrace-copy .loop-heart{left:calc(100% - 1.75em);top:.08em;-webkit-mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.25) 12%,#000 34%);mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.25) 12%,#000 34%)}
+@media(max-width:700px){.embrace-copy .loop-heart{left:calc(100% - 1.3em);top:.14em}}
+
+/* 3. Integração seção 2 → seção 3
+   - fim da foto da mãe com desfoque suave só nos últimos ~80px
+   - topo da seção 3 com a mesma cor do fim da seção 2 (esconde a curva clara do fundo)
+   - galho com folhas em sombra atravessando a divisa */
+.embrace-feature{background:linear-gradient(90deg,#f6d9dc,#fae8e7 70%,#f8e9ec)}
+.embrace-photo{-webkit-mask-image:linear-gradient(90deg,#000 0%,#000 59%,transparent 100%),linear-gradient(180deg,#000 calc(100% - 90px),transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,#000 0%,#000 59%,transparent 100%),linear-gradient(180deg,#000 calc(100% - 90px),transparent 100%);mask-composite:intersect}
+.embrace-feature:after{content:"";position:absolute;z-index:-1;left:0;right:0;bottom:0;height:110px;backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 75%);mask-image:linear-gradient(180deg,transparent 0,#000 75%);pointer-events:none}
+.education{z-index:2;overflow:visible}
+.education:after{content:"";position:absolute;z-index:-1;left:0;right:0;top:-70px;height:410px;pointer-events:none;background:linear-gradient(90deg,#f6d9dc,#fae8e7 70%,#f8e9ec);-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 70px,#000 45%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 70px,#000 45%,transparent 100%)}
+.education:before{background:linear-gradient(180deg,transparent 0,transparent 260px,rgba(248,233,236,.55) 100%)}
+@media(max-width:700px){
+  .embrace-photo{-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 60%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,#000 60%,transparent 100%)}
+  .education:after{height:220px}
+}
+
+/* 4. "Como a terapia ajuda" — layout V4 conforme referência:
+   texto à esquerda, cartões 2x2 + cartão de destaque, nota médica com ícone, lírio e folhas */
+.therapy{position:relative;isolation:isolate;overflow:hidden;padding:110px 0 150px;background:radial-gradient(ellipse 55% 60% at 90% 10%,rgba(229,155,164,.16),transparent 70%),linear-gradient(180deg,#FCEFEE 0%,#F9E6E6 100%)}
+.therapy:before{content:"";position:absolute;z-index:-1;left:-10%;right:-10%;bottom:-210px;height:330px;border-radius:50%;background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(246,214,216,.6));border-top:1px solid rgba(255,255,255,.9)}
+.therapy:after{content:"";position:absolute;z-index:-1;left:-20%;right:-5%;bottom:-260px;height:330px;border-radius:50%;background:rgba(240,200,204,.35)}
+.tp-lily{position:absolute;z-index:0;left:-50px;bottom:-95px;width:240px;height:auto;opacity:.75;transform:scaleX(-1) rotate(-8deg);pointer-events:none}
+.tp{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:64px;align-items:start}
+.tp-intro{padding-top:6px}
+.tp-intro .eyebrow{margin:0 0 20px}
+.tp-intro .accent-line{width:48px;margin:0 0 30px}
+.tp-intro h2{color:var(--wine);font-size:clamp(2.6rem,3.6vw,3.7rem);line-height:1.05;margin:0 0 28px}
+.tp-intro h2 .hl{font-size:1.25em}
+.tp-intro h3{color:var(--wine);font-size:20px;font-weight:500;letter-spacing:-.01em;margin:0 0 22px}
+.tp-intro>p{font-size:15.5px;line-height:1.7;max-width:460px;color:#2e2827;margin:0 0 30px}
+.tp-manifesto{position:relative;margin:0;max-width:480px;padding:24px 28px 24px 46px;border-radius:20px;background:rgba(255,255,255,.4);font:italic 500 26px/1.18 'Cormorant',Georgia,serif;color:var(--accent)}
+.tp-manifesto:before{content:"";position:absolute;left:26px;top:24px;bottom:24px;width:2px;background:var(--wine);opacity:.7}
+.tp-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.tp-card{display:flex;align-items:center;gap:22px;min-height:132px;padding:22px 26px;border-radius:22px;background:rgba(255,250,249,.7);border:1px solid rgba(255,255,255,.95);box-shadow:0 14px 32px rgba(120,70,78,.08);transition:transform .3s,box-shadow .3s}
+.tp-card:hover{transform:translateY(-3px);box-shadow:0 20px 40px rgba(120,70,78,.13)}
+.tp-ico{width:76px;height:76px;flex-shrink:0;border-radius:50%;display:grid;place-items:center;background:rgba(242,214,216,.6);color:var(--accent)}
+.tp-ico .icon{width:44px;height:44px;stroke-width:1.9}
+.tp-card p{margin:0;font-size:16px;line-height:1.5;color:#2e2827}
+.tp-card--feature{position:relative;grid-column:1/-1;min-height:150px;padding:26px 40px;gap:0;overflow:hidden;background:linear-gradient(100deg,#C05F68,#B4545E 60%,#A94C57);border:0;box-shadow:0 22px 46px rgba(160,76,87,.28)}
+.tp-card--feature .tp-ico{width:88px;height:88px;background:rgba(255,255,255,.18);color:#fff}
+.tp-card--feature .tp-ico .icon{width:50px;height:50px;stroke-width:1.6}
+.tp-card--feature p{position:relative;z-index:1;margin-left:34px;padding-left:44px;border-left:1.5px solid rgba(255,255,255,.55);font-size:clamp(22px,2vw,28px);line-height:1.25;color:#fff;font-weight:400;letter-spacing:-.01em}
+.tp-card--feature em{font:italic 500 1.22em/1.2 'Cormorant',Georgia,serif;color:#fff}
+.tp-heart{position:absolute;right:-40px;bottom:-6px;width:330px;height:auto;opacity:.55;filter:brightness(0) invert(1);pointer-events:none}
+.tp-note{display:flex;align-items:center;gap:22px;margin:40px 0 0 30px;font-size:14px;line-height:1.55;color:#3a302f;max-width:680px}
+.tp-note .icon{width:40px;height:40px;stroke-width:1.9;color:var(--accent)}
+.tp-note span{padding-left:22px;border-left:1.5px solid rgba(160,93,94,.45)}
+@media(max-width:1230px){.tp{gap:40px}.tp-card{gap:16px;padding:20px}.tp-ico{width:62px;height:62px}.tp-ico .icon{width:36px;height:36px}.tp-card p{font-size:15px}}
+@media(max-width:980px){
+  .tp{grid-template-columns:1fr;gap:48px}
+  .tp-intro>p,.tp-manifesto{max-width:620px}
+  .tp-lily{width:170px;opacity:.5}
+}
+@media(max-width:700px){
+  .therapy{padding:80px 0 120px}
+  .tp-intro h2{font-size:clamp(2.2rem,8.5vw,2.8rem)}
+  .tp-manifesto{font-size:22px;padding:20px 20px 20px 36px}
+  .tp-manifesto:before{left:18px;top:20px;bottom:20px}
+  .tp-grid{grid-template-columns:1fr;gap:14px}
+  .tp-card{min-height:0;padding:18px}
+  .tp-ico{width:54px;height:54px}.tp-ico .icon{width:32px;height:32px}
+  .tp-card--feature{padding:24px 22px}
+  .tp-card--feature .tp-ico{width:62px;height:62px}.tp-card--feature .tp-ico .icon{width:36px;height:36px}
+  .tp-card--feature p{margin-left:18px;padding-left:18px;font-size:20px}
+  .tp-heart{width:220px;right:-50px}
+  .tp-note{margin:30px 0 0;gap:14px;font-size:13px}
+  .tp-note span{padding-left:14px}
+  .tp-lily{width:120px;left:-30px;bottom:-20px;opacity:.4}
+}
+
+/* 5. Sobre: trajetória sempre visível (sem botão) */
+.about-story{margin-top:22px}
+.about-story p{font-size:14.5px;line-height:1.68;margin:0 0 12px;color:#2e2827}
+.about-story p:last-child{margin-bottom:0}
+
+/* 6. Dúvidas: lírio (mesmo da seção Sobre) preenchendo o espaço vazio */
+
+/* ===== Transição seção 3 → seção 4 com assets/onda_transicao.webp (07/11/2026) =====
+   A mesma faixa (proporção 3:1) é dividida em duas partes do mesmo tamanho e posição:
+   .edu-wave mostra os 42% de cima no fim da seção 3 e .tp-wave mostra os 58% de baixo
+   no começo da seção 4, então a onda continua sem emenda pela divisa. */
+:root{--band:max(33.35vw,300px)}
+.edu-wave{position:absolute;z-index:-1;left:0;right:0;bottom:0;height:calc(var(--band) * .42);background:url('../assets/onda_transicao.webp') center top/auto var(--band) no-repeat;-webkit-mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.6) 35%,#000 70%);mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.6) 35%,#000 70%);pointer-events:none}
+.tp-wave{position:absolute;z-index:-1;left:0;right:0;top:0;height:calc(var(--band) * .58);background:url('../assets/onda_transicao.webp') center bottom/auto var(--band) no-repeat;-webkit-mask-image:linear-gradient(180deg,#000 0,#000 72%,transparent 100%);mask-image:linear-gradient(180deg,#000 0,#000 72%,transparent 100%);pointer-events:none}
+.therapy{padding-top:calc(var(--band) * .3 + 60px);background:linear-gradient(180deg,#FBE9E9 0%,#FCEFEE 35%,#F9E6E6 100%)}
+@media(max-width:700px){.therapy{padding-top:calc(var(--band) * .3 + 40px)}}
+
+/* ===== 7. Dúvidas V2 (referência de 07/11/2026) =====
+   Sem cartão em volta: fundo rosado em tela cheia com ondas no topo e na base,
+   lírio no canto inferior esquerdo, coração em linha e sombra de folhas (recorte de onda_transicao.webp). */
+.faq{position:relative;isolation:isolate;overflow:hidden;padding:190px 0 230px;background:linear-gradient(180deg,#FAE9E8 0%,#F9E3E4 55%,#F7DEE0 100%)}
+.faq-wave{position:absolute;z-index:-1;left:0;width:100%;pointer-events:none}
+.faq-wave--top{top:0;height:min(200px,16vw);min-height:110px}
+.faq-wave--bottom{bottom:0;height:min(220px,17vw);min-height:110px}
+.faq-leaves{position:absolute;z-index:-1;right:0;top:20px;width:360px;height:250px;background:url('../assets/onda_transicao.webp') right -330px/auto 720px no-repeat;-webkit-mask-image:radial-gradient(ellipse 60% 60% at 68% 52%,#000 35%,transparent 78%);mask-image:radial-gradient(ellipse 60% 60% at 68% 52%,#000 35%,transparent 78%);opacity:.9;pointer-events:none}
+.faq-lily{position:absolute;z-index:0;left:-40px;bottom:-10px;width:330px;height:auto;opacity:.85;transform:scaleX(-1) rotate(-6deg);pointer-events:none}
+.faq-panel{display:grid;grid-template-columns:.4fr .6fr;gap:70px;padding:0;border:0;border-radius:0;background:none;box-shadow:none;overflow:visible;margin-top:0}
+.faq-heading{position:relative;min-height:0;z-index:1}
+.faq-heading .eyebrow{margin:0 0 20px;font-size:12px;letter-spacing:.3em;color:#3d2b2c}
+.faq-heading .accent-line{width:48px;margin:0 0 28px}
+.faq-heading h2{color:var(--wine);font-size:clamp(3rem,4.4vw,4.4rem);line-height:1;margin:0 0 30px}
+.faq-heading h2 .hl{display:block;font-size:1.2em;line-height:.95}
+.faq-heading .lead{font-size:19px;font-weight:500;color:var(--wine);margin:0}
+.faq-heart{position:absolute;left:150px;top:calc(100% + 60px);width:330px;height:auto;opacity:.9;pointer-events:none;-webkit-mask-image:linear-gradient(90deg,#000 70%,transparent 100%);mask-image:linear-gradient(90deg,#000 70%,transparent 100%)}
+.faq-list{position:relative;z-index:1;gap:18px}
+.faq-list details{border:1px solid rgba(255,255,255,.9);border-radius:24px;background:rgba(255,245,245,.72);box-shadow:0 10px 26px rgba(150,80,90,.09);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.faq-list details:hover{box-shadow:0 14px 32px rgba(150,80,90,.14)}
+.faq-list summary{min-height:70px;padding:20px 34px;font-size:16px;font-weight:500;color:#5A2232}
+.faq-list summary .icon{width:22px;height:22px;stroke-width:1.5;color:#7a3a46}
+.faq-answer{padding:0 34px 24px}
+.faq-answer p{font-size:15px;color:#3a2f2f}
+@media(max-width:1230px){.faq-panel{gap:44px}.faq-lily{width:260px}.faq-heart{left:100px;width:280px}}
+@media(max-width:980px){
+  .faq{padding:150px 0 200px}
+  .faq-panel{grid-template-columns:1fr;gap:36px}
+  .faq-heart{position:relative;left:auto;top:auto;display:block;width:240px;margin:18px 0 0 40%}
+  .faq-lily{width:200px;opacity:.6}
+  .faq-leaves{width:260px;height:190px;background-size:auto 540px;background-position:right -245px}
+}
+@media(max-width:700px){
+  .faq{padding:120px 0 170px}
+  .faq-heading h2{font-size:clamp(2.6rem,10vw,3.2rem)}
+  .faq-heading .lead{font-size:17px}
+  .faq-heart{width:200px;margin:12px 0 0 30%}
+  .faq-list summary{padding:18px 20px;font-size:15px;min-height:64px}
+  .faq-answer{padding:0 20px 22px}
+  .faq-lily{width:150px;left:-30px;opacity:.5}
+  .faq-leaves{width:200px;height:150px;background-size:auto 420px;background-position:right -190px;top:10px}
+}
+/* Dúvidas V2: ajustes finos */
+.faq-panel{grid-template-columns:.36fr .64fr;align-items:start;gap:60px}
+.faq-heart{position:relative;left:auto;top:auto;display:block;width:330px;margin:70px 0 0 130px}
+.faq-leaves{opacity:1;-webkit-mask-image:radial-gradient(ellipse 65% 65% at 68% 52%,#000 45%,transparent 80%);mask-image:radial-gradient(ellipse 65% 65% at 68% 52%,#000 45%,transparent 80%)}
+.faq-lily{opacity:.95}
+.faq-list summary{padding:20px 30px}
+@media(max-width:1230px){.faq-heart{width:280px;margin-left:80px}}
+@media(max-width:980px){.faq-heart{width:240px;margin:18px 0 0 40%}}
+@media(max-width:700px){.faq-heart{width:200px;margin:12px 0 0 30%}.faq-list summary{padding:18px 20px}}
+@media(max-width:980px){.faq-panel{grid-template-columns:1fr;gap:36px}}
+/* Dúvidas: lírio colorido da referência (assets/lirio_duvidas.png), bordas esfumadas no fundo; sem o coração */
+.faq-lily{left:-10px;bottom:0;width:360px;opacity:1;transform:none;mix-blend-mode:multiply;-webkit-mask-image:radial-gradient(ellipse 62% 60% at 48% 48%,#000 55%,transparent 100%);mask-image:radial-gradient(ellipse 62% 60% at 48% 48%,#000 55%,transparent 100%)}
+.faq-heart{display:none}
+@media(max-width:1230px){.faq-lily{width:290px}}
+@media(max-width:980px){.faq-lily{width:220px;opacity:.85}}
+@media(max-width:700px){.faq-lily{width:170px;left:-20px;opacity:.8}}
+.faq-lily{-webkit-mask-image:radial-gradient(ellipse 52% 52% at 50% 50%,#000 48%,rgba(0,0,0,.5) 72%,transparent 100%);mask-image:radial-gradient(ellipse 52% 52% at 50% 50%,#000 48%,rgba(0,0,0,.5) 72%,transparent 100%)}
+
+/* Sobre: mesmo lírio colorido da seção Dúvidas, maior, ocupando o espaço livre à direita */
+.about-lily{top:auto;right:-10px;bottom:0;width:380px;height:auto;opacity:1;z-index:0;mix-blend-mode:multiply;-webkit-mask-image:radial-gradient(ellipse 52% 52% at 50% 50%,#000 48%,rgba(0,0,0,.5) 72%,transparent 100%);mask-image:radial-gradient(ellipse 52% 52% at 50% 50%,#000 48%,rgba(0,0,0,.5) 72%,transparent 100%)}
+@media(max-width:1230px){.about-lily{display:block;width:280px}}
+@media(max-width:980px){.about-lily{display:none}}
+.about-lily{right:-50px;bottom:-30px;width:310px}
+@media(max-width:1230px){.about-lily{width:250px;right:-50px}}
+.about-lily{bottom:0}
+
+/* Sobre: galho saindo do caule do lírio e correndo pela base da seção até o começo de Dúvidas */
+.about{overflow-x:clip;overflow-y:visible;z-index:3}
+.faq{z-index:1}
+.about-branch{position:absolute;z-index:0;right:170px;bottom:-110px;width:min(680px,52vw);height:auto;overflow:visible;pointer-events:none;opacity:.95}
+.about-branch-stem{fill:none;stroke:#DDA0A8;stroke-width:2.2;stroke-linecap:round}
+@media(max-width:1230px){.about-branch{right:130px;width:min(560px,52vw);bottom:-90px}}
+@media(max-width:980px){.about-branch{display:none}}
+.about-branch{width:min(760px,56vw);bottom:-130px}
+.about-branch-stem{stroke-width:2.6}
+
+/* ===== Integração Dúvidas → Convite final (mesma técnica da seção 1 → 2) =====
+   A base da seção Dúvidas fica transparente abaixo da linha branca da onda (máscara em SVG)
+   e a seção final sobe por baixo dela; a foto da gestante cresce e aparece pela curva. */
+:root{--faq-wave:max(110px,min(220px,17vw))}
+.faq{z-index:2;-webkit-mask-image:linear-gradient(#000,#000),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 220' preserveAspectRatio='none'%3E%3Cpath fill='black' d='M0 0H1440V105C1270 101 1060 143 820 173C560 206 280 206 0 151Z'/%3E%3C/svg%3E");-webkit-mask-size:100% calc(100% - var(--faq-wave) + 1px),100% var(--faq-wave);-webkit-mask-position:top,bottom;-webkit-mask-repeat:no-repeat;mask-image:linear-gradient(#000,#000),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 220' preserveAspectRatio='none'%3E%3Cpath fill='black' d='M0 0H1440V105C1270 101 1060 143 820 173C560 206 280 206 0 151Z'/%3E%3C/svg%3E");mask-size:100% calc(100% - var(--faq-wave) + 1px),100% var(--faq-wave);mask-position:top,bottom;mask-repeat:no-repeat}
+.faq-wave--bottom{height:var(--faq-wave);min-height:0}
+.closing{z-index:1;margin-top:calc(-1 * var(--faq-wave));min-height:calc(650px + var(--faq-wave))}
+.closing-content{padding-top:calc(93px + var(--faq-wave))}
+.faq-lily{bottom:calc(var(--faq-wave) * .35)}
+@media(max-width:700px){
+  .closing{min-height:calc(780px + var(--faq-wave))}
+  .closing-content{padding-top:calc(75px + var(--faq-wave))}
+}
+
+/* ===== Sobre → Dúvidas V2 (fiel à referência de 07/11/2026) =====
+   Uma onda só, com linha branca fina: a seção Dúvidas sobe por baixo da Sobre e fica
+   transparente acima da curva (máscara), mostrando o fundo da Sobre. Logo abaixo da
+   curva, um brilho rosado. Folhas em sombra atravessam a curva à direita.
+   Espaço entre o fim do texto e "ANTES DE COMEÇAR" reduzido de ~310px para ~260px (em 1440px). */
+:root{--faq-top:max(90px,9vw)}
+.about{isolation:auto;z-index:auto;padding-bottom:calc(var(--faq-top) + 80px)}
+.about-lily,.about-branch,.faq-leaves{display:none}
+.faq{z-index:2;margin-top:calc(-1 * var(--faq-top));padding-top:calc(var(--faq-top) + 52px);background:linear-gradient(180deg,#F5DADD 0,#F9E4E5 calc(var(--faq-top) + 160px),#F9E3E4 60%,#F7DEE0 100%);
+  -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 200' preserveAspectRatio='none'%3E%3Cpath fill='black' d='M0 44C46 39 88 37 129 38C330 44 600 180 801 184C1000 188 1250 90 1440 2V200H0Z'/%3E%3C/svg%3E"),linear-gradient(#000,#000),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 220' preserveAspectRatio='none'%3E%3Cpath fill='black' d='M0 0H1440V105C1270 101 1060 143 820 173C560 206 280 206 0 151Z'/%3E%3C/svg%3E");
+  -webkit-mask-size:100% var(--faq-top),100% calc(100% - var(--faq-top) - var(--faq-wave) + 2px),100% var(--faq-wave);
+  -webkit-mask-position:0 0,0 calc(var(--faq-top) - 1px),0 100%;-webkit-mask-repeat:no-repeat;
+  mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 200' preserveAspectRatio='none'%3E%3Cpath fill='black' d='M0 44C46 39 88 37 129 38C330 44 600 180 801 184C1000 188 1250 90 1440 2V200H0Z'/%3E%3C/svg%3E"),linear-gradient(#000,#000),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 220' preserveAspectRatio='none'%3E%3Cpath fill='black' d='M0 0H1440V105C1270 101 1060 143 820 173C560 206 280 206 0 151Z'/%3E%3C/svg%3E");
+  mask-size:100% var(--faq-top),100% calc(100% - var(--faq-top) - var(--faq-wave) + 2px),100% var(--faq-wave);
+  mask-position:0 0,0 calc(var(--faq-top) - 1px),0 100%;mask-repeat:no-repeat}
+.faq-wave--top{top:0;height:var(--faq-top);min-height:0}
+
+/* ===== Tamanhos de fonte maiores (documento de 07/11/2026) =====
+   Trechos pedidos + textos vizinhos ajustados para manter a hierarquia. */
+/* Seção 2: "Você não está sozinha" */
+.embrace-copy .lead{font-size:19.5px;line-height:1.5}
+.embrace-copy>p:not(.eyebrow):not(.lead){font-size:16.5px;line-height:1.7;max-width:480px}
+/* Seção 3: "Entender essa fase" + quadro "E quando procurar ajuda?" */
+.education-deck .lead{font-size:22px}
+.education-deck p{font-size:16px}
+.edu-row .card-more-body p{font-size:15.5px}
+.health-advice h3{font-size:26px;margin-bottom:12px}
+.health-advice p{font-size:16px;line-height:1.6;margin-bottom:10px}
+.health-advice .health-disclaimer{font-size:15px}
+/* Seção Sobre: trajetória */
+.about-content h3{font-size:24px}
+.about-content .lead{font-size:18.5px;line-height:1.6}
+.about-story p{font-size:16.5px;line-height:1.7;margin-bottom:14px}
+@media(max-width:700px){
+  .embrace-copy .lead{font-size:18px}
+  .embrace-copy>p:not(.eyebrow):not(.lead),.about-story p{font-size:16px}
+  .about-content .lead{font-size:17.5px}
+  .health-advice p{font-size:15.5px}
+  .health-advice h3{font-size:24px}
+}
+@media(max-width:700px){.about{padding-bottom:calc(var(--faq-top) + 60px)}.faq{padding-top:calc(var(--faq-top) + 40px)}}
+
+/* ===== Nova logo (assets/logo_fernanda.png, fundo transparente) ===== */
+.brand-logo{display:block;height:auto;object-fit:contain;stroke:none;fill:none}
+.site-header .brand-mark.brand-logo{width:76px;height:54px}
+.brand--footer .brand-mark.brand-logo{width:82px;height:58px}
+.footer-brand p{margin-left:93px}
+.dialog-ornament .brand-logo{width:84px;height:auto}
+@media(max-width:700px){.site-header .brand-mark.brand-logo{width:60px;height:42px}.brand--footer .brand-mark.brand-logo{width:70px;height:49px}.footer-brand p{margin-left:0}}
+@media(min-width:701px){.site-header .brand-mark.brand-logo{width:86px;height:61px}}
+
+/* =========================================================
+   AJUSTES DO DOCUMENTO "Aumente as letras do menu..." (08/11/2026)
+   ========================================================= */
+/* 1. Menu: letras maiores, ocupando melhor o espaço */
+.site-nav{gap:54px;padding-left:54px;height:42px}
+.site-nav a{font-size:15.5px;font-weight:500;letter-spacing:.005em}
+.site-nav a.active:after,.site-nav a:hover:after{bottom:-12px}
+@media(max-width:1230px){.site-nav{gap:34px;padding-left:34px}.site-nav a{font-size:14.5px}}
+@media(max-width:980px){.site-nav{gap:0;padding-left:35px;height:auto}.site-nav a{font-size:16px}}
+
+/* 2. Topo: sem traços; "Gestação e puerpério – Psicanálise online" abaixo do título */
+.hero .accent-line{display:none}
+.hero h1{margin-bottom:0}
+.hero-tag{display:flex;align-items:center;gap:0;margin:26px 0 24px;font-size:12px;letter-spacing:.22em}
+.tag-dash{display:inline-block;width:4px;height:4px;margin:0 10px;border-radius:50%;vertical-align:middle;background:var(--wine);opacity:.55}
+
+/* 3. Botão flutuante do WhatsApp */
+.wa-float{position:fixed;z-index:90;right:26px;bottom:26px;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:#fff;box-shadow:0 10px 26px rgba(20,90,50,.32);text-decoration:none;transition:transform .2s,box-shadow .2s}
+.wa-float:hover{transform:scale(1.07);box-shadow:0 14px 32px rgba(20,90,50,.4)}
+.wa-float .icon{width:32px;height:32px}
+@media(max-width:700px){.wa-float{right:16px;bottom:16px;width:56px;height:56px}.wa-float .icon{width:29px;height:29px}}
+
+/* 4. "Você não está sozinha": sem frase e traço acima; textos maiores */
+.embrace-copy h2{font-size:clamp(3rem,4.5vw,4.7rem);margin-bottom:30px}
+.embrace-copy .lead{font-size:21px;line-height:1.45;margin-bottom:18px;max-width:500px}
+.embrace-copy>p:not(.eyebrow):not(.lead){font-size:18px;line-height:1.65;max-width:500px}
+.embrace-copy .read-more{margin-top:26px}
+
+/* 5. "Puerpério, baby blues...": sem frase e sem linha vertical */
+.edu-intro h2{font-size:clamp(2.6rem,3.7vw,3.9rem);margin-bottom:26px}
+.edu-intro .education-deck{padding-left:0;border-left:0;padding-bottom:0}
+.education-deck .lead{font-size:25px;line-height:1.3;margin-bottom:10px}
+.education-deck p{font-size:18px}
+
+/* 6. "Como a terapia ajuda": sem frase, sem traços; aviso centralizado em uma linha */
+.tp-intro{padding-top:0}
+.tp-intro h2{font-size:clamp(2.9rem,4.1vw,4.3rem);margin-bottom:26px}
+.tp-intro h3{font-size:23px;margin-bottom:20px}
+.tp-intro>p{font-size:17.5px;max-width:480px}
+.tp-manifesto{padding:24px 30px;font-size:30px}
+.tp-manifesto:before{display:none}
+.tp-note{grid-column:1/-1;justify-content:center;margin:46px auto 0;max-width:none;white-space:nowrap;font-size:14.5px}
+@media(max-width:1230px){.tp-note{white-space:normal;max-width:760px}}
+@media(max-width:700px){.tp-note{justify-content:flex-start;margin:30px 0 0;font-size:13.5px}}
+
+/* 7. Atendimento online: cartão centralizado e translúcido */
+.online-banner{justify-content:center}
+.online-text{background:rgba(252,246,243,.72);backdrop-filter:blur(8px) saturate(1.1);-webkit-backdrop-filter:blur(8px) saturate(1.1);border-color:rgba(255,255,255,.75)}
+.online:before{background:radial-gradient(ellipse 45% 70% at 50% 50%,rgba(245,230,225,.35),transparent 75%)}
+
+/* 8. Sobre: todo o texto abaixo do subtítulo no mesmo tamanho (o maior) */
+.about-content .lead,.about-story p{font-size:18.5px;line-height:1.65;font-weight:400;color:#2e2827}
+.about-content .lead{margin-bottom:14px}
+
+/* 9. Dúvidas: sem frase e traço; título, subtítulo e lírio preenchendo o espaço */
+.faq-heading h2{font-size:clamp(3.4rem,5.2vw,5.2rem);margin-bottom:28px}
+.faq-heading .lead{font-size:22px}
+.faq-lily{width:440px;left:-20px}
+@media(max-width:1230px){.faq-lily{width:330px}}
+
+/* 10. Convite final: sem frase e traço; textos maiores */
+.closing-content h2{font-size:clamp(3rem,4.5vw,4.7rem);margin-bottom:30px}
+.closing-content p:not(.eyebrow){font-size:18.5px;line-height:1.6;max-width:600px}
+.closing-content .btn{margin-top:28px}
+@media(max-width:700px){
+  .embrace-copy .lead{font-size:19px}.embrace-copy>p:not(.eyebrow):not(.lead){font-size:16.5px}
+  .education-deck .lead{font-size:21px}.education-deck p{font-size:16.5px}
+  .tp-intro>p{font-size:16.5px}.tp-manifesto{font-size:24px}
+  .about-content .lead,.about-story p{font-size:17px}
+  .faq-heading .lead{font-size:19px}.faq-lily{width:180px}
+  .closing-content p:not(.eyebrow){font-size:16.5px}
+}
+@media(min-width:981px){.tp-intro h3{font-size:21.5px;white-space:nowrap}}
+@media(min-width:981px){.faq-lily{bottom:calc(var(--faq-wave) * .12)}}
+/* aviso médico mais próximo dos cartões (08/11/2026) */
+.tp{row-gap:0}
+.tp-note{margin-top:34px}
+@media(max-width:980px){.tp{row-gap:48px}.tp-note{margin-top:0}}
+/* Atendimento online: botão do WhatsApp centralizado no cartão (08/11/2026) */
+.online-text .btn{align-self:center}
+/* Sobre: foto acompanha a altura do texto (topo e base alinhados ao bloco de texto) — 08/11/2026 */
+@media(min-width:981px){.about-photo-wrap{top:120px;bottom:calc(var(--faq-top) + 80px);transform:none;height:auto;aspect-ratio:auto;width:min(470px,36vw)}.about-photo-wrap img{object-position:50% 25%}}
+/* Atendimento online: espaçamentos e tamanhos harmonizados (08/11/2026) */
+@media(min-width:981px){.online-text{width:min(610px,50%);padding:58px 60px 52px}}
+.online-text .eyebrow{font-size:12px;margin-bottom:22px}
+.online-text h2{margin-bottom:18px}
+.online-text h3{font-size:22px;margin-bottom:22px}
+.online-text p{font-size:16.5px;line-height:1.65;margin-bottom:14px}
+.online-text .btn{margin:30px 0 20px;min-height:56px;padding:15px 32px;font-size:14px}
+.online-text .small-note{align-self:center;text-align:center;max-width:400px;margin:0;font-size:13px;line-height:1.55}
+@media(max-width:700px){.online-text p{font-size:15.5px}.online-text .btn{margin:24px 0 16px;padding:14px 22px;font-size:13px}}
+/* Terapia: conteúdo começa mais acima, logo após a onda (08/11/2026) */
+@media(min-width:981px){.therapy{padding-top:calc(var(--band) * .3 + 6px)}}
+/* 08/11/2026: "Nem todo sentimento..." e "Mas algumas situações..." no mesmo tamanho e cor */
+.education-deck p,.education-deck .lead{font:400 25px/1.3 'DM Sans',Arial,sans-serif;letter-spacing:-.015em;color:var(--wine);margin:0}
+.education-deck .lead{margin-bottom:6px}
+@media(max-width:700px){.education-deck p,.education-deck .lead{font-size:21px}}
+/* cartão "A mulher que também tem...": sem a linha vertical */
+.tp-card--feature p{border-left:0;padding-left:0;margin-left:30px}
+@media(max-width:700px){.tp-card--feature p{margin-left:18px}}
+@media(min-width:981px){.education-deck p,.education-deck .lead{font-size:23px}.edu-layout{grid-template-columns:1fr 1fr;gap:60px}}
+
+/* ===== "Ver mais sobre essa fase": caixa branca em largura total, abaixo da foto (08/11/2026) =====
+   O texto não fica mais dentro da área da foto, então a foto não é redimensionada ao abrir. */
+.read-more-toggle{display:inline-flex;gap:25px;align-items:center;justify-content:space-between;color:var(--wine);border:1px solid rgba(107,42,54,.45);padding:12px 22px;border-radius:70px;min-height:48px;font:700 13px/1.2 var(--sans);background:rgba(250,251,249,.6);cursor:pointer;transition:background .2s}
+.read-more-toggle:hover{background:var(--base)}
+.read-more-toggle .icon{width:18px;height:18px;transition:transform .25s}
+.read-more-toggle[aria-expanded="true"] .icon{transform:rotate(180deg)}
+
+/* =========================================================
+   CAIXA "VER MAIS SOBRE ESSA FASE" — fiel ao banner de referência (08/11/2026)
+   Medidas tiradas do banner (caixa de 1458px) e escaladas para 1210px (×0,83).
+   Ícones recortados do próprio banner: fase_coracao / fase_ramo / fase_mae_bebe.webp
+   ========================================================= */
+.fase-panel{position:relative;z-index:1;padding:36px 0 64px;background:linear-gradient(90deg,#f6d9dc,#fae8e7 70%,#f8e9ec)}
+.fase-panel[hidden]{display:none}
+.fase-box{position:relative;display:grid;grid-template-columns:49.6% 1fr;align-items:start;border-radius:33px;background:#FEF3F1;border:1px solid rgba(255,255,255,.95);box-shadow:0 22px 55px rgba(150,90,96,.13);animation:soft-reveal .3s ease-out;isolation:isolate}
+.fase-bg{position:absolute;z-index:-1;inset:0;width:100%;height:100%;border-radius:33px;overflow:hidden;pointer-events:none}
+.fase-page{position:relative;z-index:1}
+.fase-page--left{padding:46px 0 120px 5.1%}
+.fase-rule{display:block;width:75px;height:4px;border-radius:4px;background:#EFC4C6;margin:0 0 27px}
+.fase-page h3{font-family:'Cormorant',Georgia,serif;font-style:normal;font-weight:500;font-size:46px;line-height:1.1;letter-spacing:-.005em;color:#7A1F2E;max-width:470px;margin:0 0 28px}
+.fase-page .situation-list{display:grid;gap:14px;margin:0 0 35px;padding:0;list-style:none;max-width:455px}
+.fase-page .situation-list li{position:relative;display:flex;align-items:center;min-height:34px;padding-left:57px;font-size:19.5px;line-height:1.45;color:#2b2527}
+.fase-page .situation-list li:before{content:'';position:absolute;left:0;top:50%;width:32px;height:32px;margin-top:-16px;border-radius:50%;background:#F7DADB url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237A1F2E' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12.5 4 4 8-9'/%3E%3C/svg%3E") center/17px no-repeat;color:transparent}
+.fase-think{position:relative;display:flex;align-items:center;width:470px;max-width:100%;min-height:140px;padding:16px 24px 16px 20px;border-radius:25px;background:none;isolation:isolate;margin:0 0 19px -10px}
+.fase-think:before{content:"";position:absolute;z-index:-1;inset:0;border-radius:25px;background:rgba(246,213,215,.3);filter:blur(7px)}
+.fase-heart{flex:0 0 100px;width:100px;height:auto;margin-right:19px}
+.fase-think .quote-copy{flex:1;margin:0!important;padding:4px 0 4px 20px!important;border-left:0;background:none!important;border-radius:0!important;font-family:'Cormorant',Georgia,serif!important;font-style:italic;font-weight:500;font-size:30px!important;line-height:1.2;color:#7A2433!important}
+.fase-after{font-size:19.5px!important;line-height:1.55!important;color:#2b2527;margin:0!important;max-width:440px}
+.fase-sprig{position:absolute;z-index:0;left:41.7%;top:139px;width:11.65%;height:auto;pointer-events:none}
+.fase-page--right{padding:46px 2.6% 120px 6.6%}
+.fase-page--right p{font-size:19.5px;line-height:1.6;color:#2b2527;margin:0 0 20px;max-width:none}
+.fase-page strong{color:#8A1D30;font-weight:700}
+.fase-note{position:relative;display:flex;align-items:center;min-height:151px;margin:22px calc(-1 * (2.6% + 1px)) 0 -58px;padding:20px 250px 20px 38px;border-radius:90px 0 0 90px;background:none}
+.fase-page--right .fase-note-text{font-family:'Cormorant',Georgia,serif;font-style:italic;font-weight:500;font-size:27px;line-height:1.3;color:#7A2433;margin:0;max-width:340px}
+.fase-mom{position:absolute;right:30px;top:-25px;width:200px;height:auto;pointer-events:none}
+.fase-close{position:absolute;z-index:2;left:50%;bottom:-17px;transform:translateX(-50%);display:inline-flex;align-items:center;gap:12px;height:52px;margin:0;padding:0 30px;border:1.5px solid #E8BCC1;border-radius:60px;background:#FDF2F0;color:#6B1E2B;font:700 16.5px/1 var(--sans);cursor:pointer;box-shadow:0 6px 16px rgba(150,90,96,.12);transition:background .2s}
+.fase-close:hover{background:#fff}
+.fase-close .icon{width:18px;height:18px;stroke-width:2;transform:rotate(180deg)}
+@media(max-width:1230px){.fase-page h3{font-size:40px}.fase-page--right p,.fase-page .situation-list li,.fase-after{font-size:18px!important}.fase-think .quote-copy{font-size:24px!important}.fase-page--right .fase-note-text{font-size:21px}.fase-note{padding-right:210px}.fase-mom{width:190px}}
+@media(max-width:980px){
+  .fase-box{grid-template-columns:1fr}
+  .fase-sprig{display:none}
+  .fase-page--left{padding:40px 30px 10px}
+  .fase-page--right{padding:20px 30px 80px}
+  .fase-note{margin:22px -30px 0 -10px;padding-right:200px}
+}
+@media(max-width:700px){
+  .fase-panel{padding:24px 0 56px}
+  .fase-box{border-radius:26px}.fase-bg{border-radius:26px}
+  .fase-page--left{padding:32px 20px 6px}.fase-page--right{padding:18px 20px 80px}
+  .fase-page h3{font-size:34px}
+  .fase-page .situation-list li,.fase-page--right p,.fase-after{font-size:17.5px!important}
+  .fase-think{min-height:0;margin-left:0}.fase-heart{flex-basis:70px;width:70px;margin-right:12px}.fase-think .quote-copy{font-size:21px!important;padding-left:14px!important}
+  .fase-note{flex-direction:column;align-items:flex-start;margin:22px -20px 0 -6px;padding:26px 24px 170px;border-radius:40px 0 0 40px}
+  .fase-mom{top:auto;bottom:6px;right:16px;width:160px}
+  .fase-page--right .fase-note-text{font-size:20px}
+}
+
+/* ===== Tipografia única (09/11/2026): destaque e texto corrido com a mesma fonte, tamanho e peso ===== */
+.embrace-copy .lead,.embrace-copy p:not(.lead),.education-deck .lead,.education-deck p,.card-more-body p,.tp-intro p,.tp-card p,.online-text p:not(.eyebrow):not(.small-note),.about-content .lead,.about-story p,.faq .lead,.faq-answer p,.closing-content p{font-family:var(--sans)!important;font-size:18px!important;font-weight:450!important;line-height:1.65!important;letter-spacing:0!important}
+@media(max-width:700px){.embrace-copy .lead,.embrace-copy p:not(.lead),.education-deck .lead,.education-deck p,.card-more-body p,.tp-intro p,.tp-card p,.online-text p:not(.eyebrow):not(.small-note),.about-content .lead,.about-story p,.faq .lead,.faq-answer p,.closing-content p{font-size:17px!important}}
+
+/* ===== Textos de leitura e botões maiores (09/11/2026) ===== */
+.hero-lead,.faq summary,.health-advice-copy p,.small-note,.tp-note span{font-size:18px!important;line-height:1.6!important}
+.health-advice-copy p:not(.urgent-copy),.small-note,.tp-note span{font-weight:450!important}
+.faq summary{font-weight:500!important}
+.btn{font-size:15.5px!important}
+.btn--top{font-size:14px!important}
+.edu-more{font-size:14.5px!important}
+.read-more-toggle,.read-more-toggle span{font-size:15.5px!important}
+.fase-close{font-size:16.5px!important}
+.site-nav a{font-size:16px!important}
+.contact-dialog p,.contact-dialog blockquote{font-size:16.5px!important}
+@media(max-width:700px){.hero-lead,.faq summary,.health-advice-copy p,.small-note,.tp-note span{font-size:17px!important}.btn{font-size:15px!important}}
