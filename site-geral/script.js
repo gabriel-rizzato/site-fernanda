@@ -90,7 +90,7 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 if ('IntersectionObserver' in window && !reduceMotion) {
   const io = new IntersectionObserver(items => items.forEach(item => {
     if (item.isIntersecting) { item.target.classList.add('visible'); io.unobserve(item.target); }
-  }), { threshold: 0.08, rootMargin: '0px 0px 60px 0px' });
+  }), { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('[data-reveal]').forEach(element => io.observe(element));
 } else document.querySelectorAll('[data-reveal]').forEach(element => element.classList.add('visible'));
 
