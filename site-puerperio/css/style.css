@@ -56,6 +56,7 @@ ul { margin: 0; padding-left: 1.3em; }
 .embrace-copy { width: 44%; padding: 105px 0 100px; position: relative; z-index: 2; }
 .embrace-copy h2 { max-width: 480px; margin-bottom: 25px; }
 .embrace-copy .lead { font-size: 17px; margin-bottom: 15px; }
+.embrace-copy>p:not(.eyebrow):not(.lead) { max-width: 430px; font-size: 14px; line-height: 1.7; }
 .loop-heart { position: absolute; width: 210px; right: -45px; top: 26%; fill: none; stroke-width: 1.8; stroke-linecap: round; opacity: .75; pointer-events: none; }
 .read-more { margin-top: 20px; max-width: 520px; }
 .read-more summary { display: inline-flex; gap: 25px; align-items: center; justify-content: space-between; border: 1px solid var(--green); padding: 12px 22px; border-radius: 70px; min-height: 48px; max-width: 100%; font-size: 13px; font-weight: 700; list-style: none; cursor: pointer; background: rgba(250,251,249,.6); transition: background .2s,border-color .2s; }
@@ -94,7 +95,9 @@ ul { margin: 0; padding-left: 1.3em; }
 .therapy-grid { display: grid; grid-template-columns: .96fr 1.04fr; gap: 80px; align-items: start; }
 .therapy-intro h2 { color: var(--wine); max-width: 610px; }
 .therapy-intro h3 { color: var(--wine); margin-bottom: 23px; }
+.therapy-intro p:not(.eyebrow) { max-width: 610px; }
 .therapy-intro .lead { margin-bottom: 15px; }
+.therapy-intro>p:not(.eyebrow):not(.lead):not(.medical-note) { font-size: 15px; }
 .read-more--quiet summary { border-color: var(--pink); background: var(--pink-bg); }
 .medical-note { margin-top: 29px !important; font-size: 12px !important; line-height: 1.55 !important; color: #554e4b; border-top: 1px solid var(--pink); padding-top: 16px; }
 .therapy-decor { position: relative; min-height: 470px; display: flex; justify-content: space-between; gap: 23px; padding-top: 105px; }
@@ -139,6 +142,7 @@ ul { margin: 0; padding-left: 1.3em; }
 .closing-overlay { position: absolute; inset: 0; z-index: -1; }
 .closing-content { padding: 93px 0 98px; color: var(--base); }
 .closing-content h2 { max-width: 590px; color: #fff9f6; }
+.closing-content p:not(.eyebrow) { max-width: 520px; font-size: 15px; line-height: 1.55; }
 .closing-content .btn { margin-top: 23px; }
 .closing-content .accent-line { margin: 25px 0; }
 .site-footer { color: var(--ink); padding: 50px 0 26px; }
@@ -226,6 +230,7 @@ ul { margin: 0; padding-left: 1.3em; }
   .embrace-copy { width: 100%; padding: 470px 0 85px; }
   .embrace-copy h2 { max-width: 520px; }
   .embrace-copy .lead { font-size: 17px; }
+  .embrace-copy>p:not(.eyebrow):not(.lead) { font-size: 14px; }
   .loop-heart { right: -92px; top: 51%; width: 190px; }
   .education { padding: 83px 0; }
   .education-grid { grid-template-columns: 1fr; gap: 17px; }
@@ -255,6 +260,7 @@ ul { margin: 0; padding-left: 1.3em; }
   .faq-answer { padding: 0 19px 22px; }
   .closing { min-height: 780px; align-items: start; background-position: 66% bottom; background-size: auto 61%; background-color: #a96d78; }
   .closing-content { padding: 75px 0 370px; }
+  .closing-content p:not(.eyebrow) { font-size: 14px; }
   .footer-main, .footer-bottom { flex-direction: column; align-items: flex-start; }
   .footer-main { gap: 35px; }
   .footer-nav { justify-content: flex-start; gap: 16px 25px; }

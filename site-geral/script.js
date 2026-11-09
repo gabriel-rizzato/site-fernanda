@@ -108,3 +108,6 @@ if ('IntersectionObserver' in window) {
 // Cards de benefícios e etapas do atendimento ficam sempre abertos (layout fixo)
 document.querySelectorAll('.benefit > summary, .process-item > summary').forEach(summary =>
   summary.addEventListener('click', event => event.preventDefault()));
+
+// Garante a classe "js" (também definida no <head>) usada pelas animações de entrada
+document.documentElement.classList.add('js');
