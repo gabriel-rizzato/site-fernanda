@@ -753,25 +753,25 @@ h3,.therapy-intro h3,.online-text h3,.about-content h3,.info-card h3,.health-adv
 @keyframes pv-rise { from { opacity: 0; translate: 0 24px; } to { opacity: 1; translate: 0 0; } }
 @keyframes pv-ring { 0% { opacity: .5; transform: scale(1); } 70%, 100% { opacity: 0; transform: scale(1.5); } }
 @media (prefers-reduced-motion: no-preference) {
-  [data-reveal] { transition: opacity 1s cubic-bezier(.16,1,.3,1) var(--d,0s), translate 1s cubic-bezier(.16,1,.3,1) var(--d,0s); }
+  [data-reveal] { transition: opacity 1.3s cubic-bezier(.16,1,.3,1) var(--d,0s), translate 1.3s cubic-bezier(.16,1,.3,1) var(--d,0s); }
   .js [data-reveal]:not(.visible) { opacity: 0; translate: 0 30px; }
   /* primeira tela: entra ao carregar, sem depender do JavaScript */
-  .hero-content { animation: pv-rise 1s cubic-bezier(.16,1,.3,1) .1s both; }
+  .hero-content { animation: pv-rise 1.3s cubic-bezier(.16,1,.3,1) .1s both; }
   /* listas em sequência: o bloco fica parado e cada item entra um depois do outro */
   .js .edu-list[data-reveal]:not(.visible), .js .tp-grid[data-reveal]:not(.visible), .js .faq-list[data-reveal]:not(.visible) { opacity: 1; translate: none; }
-  .edu-row { transition: opacity .85s ease var(--d,0s), translate .85s cubic-bezier(.16,1,.3,1) var(--d,0s), box-shadow .25s, background .25s; }
-  .tp-card { transition: opacity .85s ease var(--d,0s), translate .85s cubic-bezier(.16,1,.3,1) var(--d,0s), transform .3s, box-shadow .3s; }
-  .faq-list details { transition: opacity .8s ease var(--d,0s), translate .8s cubic-bezier(.16,1,.3,1) var(--d,0s), box-shadow .25s; }
+  .edu-row { transition: opacity 1.1s ease var(--d,0s), translate 1.1s cubic-bezier(.16,1,.3,1) var(--d,0s), box-shadow .25s, background .25s; }
+  .tp-card { transition: opacity 1.1s ease var(--d,0s), translate 1.1s cubic-bezier(.16,1,.3,1) var(--d,0s), transform .3s, box-shadow .3s; }
+  .faq-list details { transition: opacity 1.05s ease var(--d,0s), translate 1.05s cubic-bezier(.16,1,.3,1) var(--d,0s), box-shadow .25s; }
   .js .edu-list:not(.visible) .edu-row, .js .tp-grid:not(.visible) .tp-card, .js .faq-list:not(.visible) details { opacity: 0; translate: 0 20px; }
-  .edu-row:nth-child(1), .tp-card:nth-child(1), .faq-list details:nth-child(1) { --d: .1s; }
-  .edu-row:nth-child(2), .tp-card:nth-child(2), .faq-list details:nth-child(2) { --d: .25s; }
-  .edu-row:nth-child(3), .tp-card:nth-child(3), .faq-list details:nth-child(3) { --d: .4s; }
-  .tp-card:nth-child(4), .faq-list details:nth-child(4) { --d: .55s; }
-  .tp-card:nth-child(5), .faq-list details:nth-child(5) { --d: .7s; }
-  .faq-list details:nth-child(6) { --d: .85s; }
+  .edu-row:nth-child(1), .tp-card:nth-child(1), .faq-list details:nth-child(1) { --d: .13s; }
+  .edu-row:nth-child(2), .tp-card:nth-child(2), .faq-list details:nth-child(2) { --d: .32s; }
+  .edu-row:nth-child(3), .tp-card:nth-child(3), .faq-list details:nth-child(3) { --d: .52s; }
+  .tp-card:nth-child(4), .faq-list details:nth-child(4) { --d: .72s; }
+  .tp-card:nth-child(5), .faq-list details:nth-child(5) { --d: .9s; }
+  .faq-list details:nth-child(6) { --d: 1.1s; }
   /* painel "Entenda mais" aparece com suavidade ao abrir */
-  .fase-panel:not([hidden]) .fase-box { animation: pv-rise .9s cubic-bezier(.16,1,.3,1) both; }
+  .fase-panel:not([hidden]) .fase-box { animation: pv-rise 1.2s cubic-bezier(.16,1,.3,1) both; }
   /* botão flutuante do WhatsApp: entra com fade e dá um pulso discreto */
-  .wa-float { animation: pv-rise .6s ease 1.2s both; }
+  .wa-float { animation: pv-rise .8s ease 1.2s both; }
   .wa-float::after { content: ''; position: absolute; inset: 0; border-radius: 50%; border: 2px solid rgba(37,211,102,.55); opacity: 0; pointer-events: none; animation: pv-ring 4.5s ease-out 3.5s infinite; }
 }
