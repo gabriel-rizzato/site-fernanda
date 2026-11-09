@@ -105,3 +105,13 @@ document.querySelectorAll('[data-expand]').forEach(trigger => {
     else document.querySelector(`[data-expand="${panel.id}"][aria-expanded]`)?.focus();
   });
 });
+
+// Entrada suave das seções ao rolar: só dispara quando o elemento já está visível; sem animação se o visitante pediu "reduzir movimento".
+document.documentElement.classList.add('js');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if ('IntersectionObserver' in window && !reduceMotion) {
+  const revealObserver = new IntersectionObserver(items => items.forEach(item => {
+    if (item.isIntersecting) { item.target.classList.add('visible'); revealObserver.unobserve(item.target); }
+  }), { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('[data-reveal]').forEach(element => revealObserver.observe(element));
+} else document.querySelectorAll('[data-reveal]').forEach(element => element.classList.add('visible'));
