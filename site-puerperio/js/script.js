@@ -105,3 +105,19 @@ document.querySelectorAll('[data-expand]').forEach(trigger => {
     else document.querySelector(`[data-expand="${panel.id}"][aria-expanded]`)?.focus();
   });
 });
+
+// Movimento suave ao rolar: marca os blocos como "reveláveis" por aqui (o HTML não precisa mudar) e só dispara quando já estão visíveis.
+// Sem animação para quem pediu "reduzir movimento"; sem JavaScript o conteúdo continua visível.
+(() => {
+  document.documentElement.classList.add('js');
+  const blocos = ['.embrace-copy', '.edu-intro', '.edu-list', '.health-advice-copy', '.tp-intro', '.tp-grid', '.online-text', '.about-content', '.faq-heading', '.faq-list', '.closing-content'];
+  const itens = [...document.querySelectorAll(blocos.join(','))];
+  itens.forEach(item => item.setAttribute('data-reveal', ''));
+  const reduzir = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in window && !reduzir) {
+    const observador = new IntersectionObserver(entradas => entradas.forEach(entrada => {
+      if (entrada.isIntersecting) { entrada.target.classList.add('visible'); observador.unobserve(entrada.target); }
+    }), { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+    itens.forEach(item => observador.observe(item));
+  } else itens.forEach(item => item.classList.add('visible'));
+})();
