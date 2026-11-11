@@ -121,3 +121,16 @@ document.querySelectorAll('[data-expand]').forEach(trigger => {
     itens.forEach(item => observador.observe(item));
   } else itens.forEach(item => item.classList.add('visible'));
 })();
+
+// Painel "Ver mais sobre essa fase" no celular: o conteúdo aparece em etapas (botões "Ver mais" discretos).
+// No desktop os botões ficam ocultos por CSS e o painel mostra tudo de uma vez.
+(() => {
+  const box = document.querySelector('.fase-box');
+  if(!box) return;
+  box.querySelectorAll('[data-fase-next]').forEach(btn => {
+    btn.addEventListener('click', () => { box.dataset.stage = btn.dataset.faseNext; });
+  });
+  document.querySelectorAll('[data-expand="fase-mais"]').forEach(btn => {
+    btn.addEventListener('click', () => { box.dataset.stage = '0'; });
+  });
+})();

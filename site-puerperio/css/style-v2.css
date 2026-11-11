@@ -271,7 +271,7 @@ h3,.therapy-intro h3,.online-text h3,.about-content h3,.info-card h3,.health-adv
 /* ===== Integração hero + "Você não está sozinha" (07/11/2026) =====
    hero_onda.webp: imagem do hero com a parte abaixo da onda transparente.
    A seção seguinte sobe por baixo do hero e aparece através da curva. */
-.hero{position:relative;z-index:2;background:transparent url('../assets/hero_onda.webp?v=5') center bottom/cover no-repeat;min-height:max(700px,46.9vw)}
+.hero{position:relative;z-index:2;background:transparent url('../assets/hero_onda_v2.webp?v=1') center bottom/cover no-repeat;min-height:max(700px,46.9vw)}
 .hero-shade{display:none}
 .embrace{position:relative;z-index:1;margin-top:calc(-1 * max(174px,11.7vw))}
 .embrace-feature{padding-top:max(174px,11.7vw);min-height:calc(610px + max(174px,11.7vw))}
@@ -774,4 +774,119 @@ h3,.therapy-intro h3,.online-text h3,.about-content h3,.info-card h3,.health-adv
   /* botão flutuante do WhatsApp: entra com fade e dá um pulso discreto */
   .wa-float { animation: pv-rise .8s ease 1.2s both; }
   .wa-float::after { content: ''; position: absolute; inset: 0; border-radius: 50%; border: 2px solid rgba(37,211,102,.55); opacity: 0; pointer-events: none; animation: pv-ring 4.5s ease-out 3.5s infinite; }
+}
+
+/* =========================================================
+   AJUSTES SOMENTE MOBILE (até 700px) — 11/11/2026
+   Hero com foto logo abaixo do cabeçalho, acolhimento, espaçamentos,
+   imagem do atendimento online, fecho e painel "Ver mais sobre essa fase".
+   ========================================================= */
+.lbl-mob{display:none}
+@media(max-width:700px){
+  .lbl-desk{display:none}.lbl-mob{display:inline}
+
+  /* Hero: foto logo abaixo do cabeçalho (Fernanda centralizada), depois título e texto */
+.hero{--hh:clamp(300px,92vw,520px);min-height:0;display:block;align-items:initial;overflow:hidden;padding-top:var(--hh);background:#f8e4e6 url('../assets/hero_onda_v2.webp?v=1') no-repeat;background-size:auto var(--hh);background-position:calc(50% - var(--hh) * .436) 0}
+  .hero-shade{display:none}
+  .hero-inner{padding:10px 0 44px}
+  .embrace{margin-top:0}
+  .embrace-feature{padding-top:0}
+
+  /* Você não está sozinha: título começa na linha rosa; menos espaço embaixo */
+  .embrace-photo{height:560px;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 70px,#000 calc(100% - 90px),transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 70px,#000 calc(100% - 90px),transparent 100%)}
+  .embrace-copy{padding:440px 0 8px;background:linear-gradient(180deg,transparent 0,transparent 395px,rgba(249,232,235,.72) 470px,rgba(249,232,235,.4) 100%)}
+
+  /* Educação: mais respiro lateral e sem estouro de largura */
+  .education .container{width:calc(100% - 56px)}
+  .edu-layout{grid-template-columns:minmax(0,1fr)}
+  .edu-intro,.education-grid,.edu-list{min-width:0;max-width:100%}
+  .education-header h2,.edu-intro h2{font-size:clamp(2.7rem,9.6vw,3.6rem)}
+  .hl--nowrap{white-space:normal}
+
+  /* Atendimento online: a imagem começa na linha rosa, para baixo */
+  .online{background-position:26% -30px;background-size:auto 490px}
+
+  /* Sobre: menos espaço embaixo */
+  .about{padding-bottom:105px}
+
+  /* Fecho: nova foto */
+  .closing{min-height:0;align-items:start;background:#b85e67}
+  .closing-overlay{top:auto;bottom:0;height:min(105vw,520px);background:url('../assets/convite_gestante_mobile.jpg') center bottom/cover no-repeat;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 26%);mask-image:linear-gradient(180deg,transparent 0,#000 26%)}
+  .closing-content{padding-bottom:calc(min(105vw,520px) - 5px)}
+
+  /* Painel "Ver mais sobre essa fase": tudo dentro do quadro */
+  .fase-box{grid-template-columns:minmax(0,1fr)}
+  .fase-page,.fase-page--left,.fase-page--right{min-width:0;max-width:100%}
+  .fase-page .situation-list{max-width:100%}
+  .fase-think{width:100%;max-width:100%;margin:0 0 19px;padding:16px 18px 16px 14px;min-height:0}
+  .fase-heart{flex:0 0 64px;width:64px;margin-right:12px}
+  .fase-think .quote-copy{font-size:24px!important;padding-left:0!important}
+  .fase-after,.fase-page--right p{max-width:100%}
+  .fase-note{margin:22px 0 0;padding:6px 0 150px;border-radius:0;flex-direction:column;align-items:flex-start}
+  .fase-page--right .fase-note-text{max-width:100%;font-size:23px!important;line-height:1.3!important}
+  .fase-page .situation-list li{padding-left:46px!important}
+  .fase-mom{right:6px;top:auto;bottom:4px;width:150px}
+}
+
+/* =========================================================
+   AJUSTES SOMENTE MOBILE · rodada 2 (até 700px) — 11/11/2026
+   Transição hero→acolhimento em onda, título com faixa de ponta a ponta,
+   menos espaços, painel em etapas ("Ver mais"), ondas suaves, fecho com texto sobre a foto.
+   ========================================================= */
+.fase-more{display:none}
+@media(max-width:700px){
+  /* Hero → "Você não está sozinha": onda suave no lugar do véu branco; a foto aparece inteira */
+  .embrace-photo{-webkit-mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - 90px),transparent 100%);mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - 90px),transparent 100%)}
+  .embrace-feature:before{content:"";position:absolute;z-index:-1;left:0;right:0;top:-1px;height:54px;pointer-events:none;
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 390 54' preserveAspectRatio='none'%3E%3Cpath d='M0 0H390V10C310 44 220 48 150 34S40 6 0 22Z' fill='%23f8e4e6'/%3E%3Cpath d='M0 22C40 6 90 26 150 34S310 44 390 10' fill='none' stroke='%23fff' stroke-opacity='.85' stroke-width='1.4'/%3E%3C/svg%3E") top/100% 100% no-repeat}
+
+  /* Título: faixa translúcida de uma ponta a outra da página */
+  .embrace-copy{position:relative;padding:440px 0 0;background:none}
+  .embrace-copy:before{content:"";position:absolute;z-index:-1;top:385px;bottom:0;left:calc(50% - 50vw);width:100vw;pointer-events:none;
+    background:linear-gradient(180deg,transparent 0,rgba(249,232,235,.72) 85px,rgba(249,232,235,.5) 100%)}
+
+  /* Botão "Ver mais" livre de sobreposição e menos espaço entre seções */
+  .education:after{top:-40px}
+  .embrace-copy{padding-bottom:40px}
+  .education{padding-top:26px}
+  .fase-panel{padding:24px 0 22px}
+
+  /* Painel: ondas suaves no rodapé, ícone acima da onda */
+  .fase-bg{display:none}
+  .fase-box:after{content:"";position:absolute;z-index:0;left:0;right:0;bottom:0;height:62px;border-radius:0 0 26px 26px;pointer-events:none;
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 390 62' preserveAspectRatio='none'%3E%3Cpath d='M0 30C90 20 150 38 230 31S340 18 390 27V62H0Z' fill='%23f9e6e5'/%3E%3Cpath d='M0 46C100 38 200 52 290 44S360 40 390 44V62H0Z' fill='%23f4d5d6' fill-opacity='.85'/%3E%3C/svg%3E") bottom/100% 100% no-repeat}
+  .fase-page--right{padding-bottom:118px}
+  .fase-mom{bottom:8px}
+
+  /* Painel em etapas: botões "Ver mais" discretos */
+  .fase-more{display:none;align-items:center;gap:6px;margin:12px 0 0;padding:6px 2px;border:0;background:none;color:var(--wine);font:500 14.5px/1 var(--sans);opacity:.85;cursor:pointer}
+  .fase-more .icon{width:16px;height:16px}
+  .fase-box[data-stage="0"] .fase-more--1,.fase-box[data-stage="1"] .fase-more--2{display:inline-flex}
+  .fase-box[data-stage="0"] .fase-page--right{display:none}
+  .fase-box[data-stage="1"] .fase-late{display:none}
+  .fase-box[data-stage="0"] .fase-page--left{padding-bottom:84px}
+
+  /* Fecho: texto sobre a foto, com degradê para dar leitura */
+  .closing{min-height:0;align-items:start;background:#b85e67 url('../assets/convite_gestante_mobile.jpg') 72% bottom/cover no-repeat}
+  .closing-overlay{inset:0;top:0;bottom:0;height:auto;-webkit-mask-image:none;mask-image:none;
+    background:linear-gradient(180deg,rgba(168,86,100,.94) 0%,rgba(168,86,100,.82) 42%,rgba(168,86,100,.4) 70%,rgba(168,86,100,.08) 100%)}
+  .closing-content{padding-bottom:240px}
+}
+
+/* Mobile · hero: botão centralizado e menos espaço embaixo (11/11/2026) */
+@media(max-width:700px){
+  .hero-inner{padding-bottom:6px}
+  .hero-content .btn{display:flex;width:fit-content;margin-left:auto;margin-right:auto}
+}
+@media(max-width:700px){.embrace-feature:before{top:-4px;height:58px}}
+
+/* Mobile · coração do título "Você não está sozinha": logo após o texto, como no desktop, sem cortar (11/11/2026) */
+@media(max-width:700px){
+  .embrace-copy .loop-heart{left:calc(100% - 2.3em);top:1.08em;width:4.6em}
+}
+
+/* Mobile · painel: sem vão entre o ícone da mãe e a onda de baixo (11/11/2026) */
+@media(max-width:700px){
+  .fase-page--right{padding-bottom:70px}
+  .fase-mom{bottom:0}
 }

@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#F5E6E1">
-  <meta name="description" content="Acompanhamento psicanalítico online para gestação e puerpério com Fernanda Rodrigues. Um espaço de escuta para falar sobre a maternidade e seus sentimentos.">
+  <meta name="description" content="Acompanhamento psicanalítico online para gestação e puerpério. Comigo, você encontra um espaço de escuta para falar sobre a maternidade e seus sentimentos.">
   <meta name="robots" content="index,follow">
   <title>Gestação e puerpério | Fernanda Rodrigues — Psicanalista</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500;1,600&family=DM+Sans:opsz,wght@9..40,300..700&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/hero_onda.webp?v=5" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/hero_onda_v2.webp?v=1" fetchpriority="high">
   <link rel="stylesheet" href="css/style-v2.css?v=5">
   <script src="js/script.js" defer></script>
 </head>
@@ -63,7 +63,7 @@
       <div class="hero-content">
         <h1 id="hero-title">A chegada do bebê trouxe <em class="hl">amor</em>, mas também <em class="hl">muitos desafios</em>.</h1>
         <p class="eyebrow eyebrow--hero hero-tag">GESTAÇÃO E PUERPÉRIO <span class="tag-dash" aria-hidden="true"></span> PSICANÁLISE ONLINE</p>
-        <p class="hero-lead">Entre o amor pelo bebê, as cobranças e o cansaço, pode ser difícil encontrar seu próprio ritmo. A psicanálise ajuda a compreender seus sentimentos e essa nova experiência.</p>
+        <p class="hero-lead">Entre o amor pelo bebê, as cobranças e o cansaço, pode ser difícil encontrar seu próprio ritmo. Posso ajudar você a compreender seus sentimentos e essa nova experiência.</p>
         <a href="#contato" class="btn btn--primary contact-trigger"><svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"/></svg> Agende seu atendimento <svg class="icon icon--small" aria-hidden="true"><use href="#icon-arrow"/></svg></a>
       </div>
     </div>
@@ -87,7 +87,7 @@
     <!-- Texto completo em caixa branca, fora da área da foto (a foto não muda de tamanho ao abrir) -->
     <div class="fase-panel" id="fase-mais" hidden>
       <div class="container">
-        <div class="fase-box">
+        <div class="fase-box" data-stage="0">
           <svg class="fase-bg" viewBox="0 0 1458 918" preserveAspectRatio="none" aria-hidden="true">
             <defs>
               <linearGradient id="fb-wave" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F6DCDB"/><stop offset=".55" stop-color="#F4D4D4"/><stop offset="1" stop-color="#EFC9C9"/></linearGradient>
@@ -112,15 +112,17 @@
               <p class="quote-copy">Talvez você pense:<br> “Eu era uma mulher,<br> agora sou outra.”</p>
             </div>
             <p class="fase-after">E ainda esteja tentando entender o que essa mudança significa para você.</p>
+            <button type="button" class="fase-more fase-more--1" data-fase-next="1">Ver mais <svg class="icon" aria-hidden="true"><use href="#icon-chevron"/></svg></button>
           </div>
           <img class="fase-sprig" src="assets/fase_ramo.webp" alt="" aria-hidden="true" width="170" height="680" loading="lazy" decoding="async">
           <div class="fase-page fase-page--right">
             <p>Nas noites do puerpério, a rotina muda, o ritmo se acelera e quase tudo parece girar em torno de uma nova responsabilidade.</p>
             <p>Entre os cuidados com o bebê e as expectativas sobre como você deveria se sentir, pode faltar tempo para entender o que está acontecendo dentro de você.</p>
             <p>É possível sentir, ao mesmo tempo, <strong>amor e irritação</strong>, <strong>felicidade e tristeza</strong>, vontade de estar perto e, ao mesmo tempo, necessidade de um momento só seu.</p>
-            <p>Nem sempre é fácil falar sobre esses sentimentos. Às vezes, existe o receio de ser julgada ou de parecer que você não está feliz com a maternidade.</p>
-            <p>Mas uma coisa não anula a outra. Você pode <strong>amar profundamente seu bebê</strong> e também sentir falta da vida de antes, precisar de descanso, ter dúvidas e viver dias difíceis.</p>
-            <div class="fase-note">
+            <button type="button" class="fase-more fase-more--2" data-fase-next="2">Ver mais <svg class="icon" aria-hidden="true"><use href="#icon-chevron"/></svg></button>
+            <p class="fase-late">Nem sempre é fácil falar sobre esses sentimentos. Às vezes, existe o receio de ser julgada ou de parecer que você não está feliz com a maternidade.</p>
+            <p class="fase-late">Mas uma coisa não anula a outra. Você pode <strong>amar profundamente seu bebê</strong> e também sentir falta da vida de antes, precisar de descanso, ter dúvidas e viver dias difíceis.</p>
+            <div class="fase-note fase-late">
               <p class="fase-note-text">Você também está passando por uma grande mudança. E o que acontece com você merece atenção, compreensão e cuidado.</p>
               <img class="fase-mom" src="assets/fase_mae_bebe.webp" alt="" aria-hidden="true" width="270" height="296" loading="lazy" decoding="async">
             </div>
@@ -168,8 +170,8 @@
     <div class="tp-wave" aria-hidden="true"></div>
     <div class="container tp">
       <div class="tp-intro">
-        <h2 id="therapy-title">Como a terapia<br> <em class="hl">ajuda</em> nessa fase</h2>
-        <p>Aqui você pode falar sobre o que está vivendo e elaborar sentimentos e questões que surgem ou ganham novos sentidos nessa fase.</p>
+        <h2 id="therapy-title">Como eu posso<br> <em class="hl">te ajudar</em> nessa fase</h2>
+        <p>Comigo, você pode falar sobre o que está vivendo e elaborar sentimentos e questões que surgem ou ganham novos sentidos nessa fase.</p>
         <blockquote class="tp-manifesto">A maternidade não apaga sua história, seus desejos ou suas relações.</blockquote>
       </div>
       <div class="tp-topics">
@@ -181,7 +183,7 @@
           <li class="tp-card tp-card--feature"><span class="tp-ico"><svg class="icon" aria-hidden="true"><use href="#icon-lotus"/></svg></span><p>A mulher que também tem<br> <em>sonhos, desejos e projetos.</em></p><img class="tp-heart" src="assets/coracao_linha.webp" alt="" aria-hidden="true" width="465" height="125" loading="lazy" decoding="async"></li>
         </ul>
       </div>
-      <p class="tp-note"><svg class="icon" aria-hidden="true"><use href="#icon-stethoscope"/></svg><span>Isso faz parte do cuidado emocional, mas não substitui avaliação médica ou outros acompanhamentos quando necessários.</span></p>
+      <p class="tp-note"><svg class="icon" aria-hidden="true"><use href="#icon-stethoscope"/></svg><span>Meu trabalho faz parte do cuidado emocional, mas não substitui avaliação médica ou outros acompanhamentos quando necessários.</span></p>
     </div>
   </section>
 
@@ -193,11 +195,11 @@
           <p class="eyebrow">ATENDIMENTO ONLINE</p>
           <h2 id="online-title">Sessões que cabem na <em class="hl">sua rotina</em></h2>
           <h3>Você não precisa sair de casa</h3>
-          <p>As sessões são online, com duração de 50 minutos, uma vez por semana.</p>
+          <p>Meus atendimentos são online, com duração de 50 minutos, uma vez por semana.</p>
           <p>Você participa de onde estiver, sem precisar organizar deslocamentos ou deixar seu bebê com outra pessoa. Ele pode ficar com você durante a sessão.</p>
-          <p>Se preferir, pode começar esse acompanhamento ainda durante a gestação.</p>
-          <a href="#contato" class="btn btn--primary contact-trigger"><svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"/></svg> Conversar sobre o atendimento</a>
-          <p class="small-note">Os dias e horários disponíveis podem ser informados diretamente pelo WhatsApp.</p>
+          <p>Se preferir, você pode começar comigo ainda durante a gestação.</p>
+          <a href="#contato" class="btn btn--primary contact-trigger"><svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"/></svg> <span class="lbl-desk">Vamos conversar sobre o atendimento</span><span class="lbl-mob">Agende seu atendimento</span></a>
+          <p class="small-note">Informo os dias e horários disponíveis diretamente pelo WhatsApp.</p>
         </div>
       </div>
     </div>
@@ -265,12 +267,12 @@
         <p class="lead">Algumas dúvidas antes de começar</p>
       </div>
       <div class="faq-list">
-        <details><summary>Posso começar durante a gestação?<svg class="icon" aria-hidden="true"><use href="#icon-chevron"/></svg></summary><div class="faq-answer"><p>Sim. O acompanhamento também pode começar durante a gestação, para que você tenha esse suporte antes mesmo da chegada do bebê.</p></div></details>
+        <details><summary>Posso começar durante a gestação?<svg class="icon" aria-hidden="true"><use href="#icon-chevron"/></svg></summary><div class="faq-answer"><p>Sim. Posso te acompanhar também durante a gestação, para que você tenha esse suporte antes mesmo da chegada do bebê.</p></div></details>
         <details><summary>E se meu bebê chorar durante a sessão?<svg class="icon" aria-hidden="true"><use href="#icon-chevron"/></svg></summary><div class="faq-answer"><p>Tudo bem. Seu bebê pode ficar com você. A maternidade não precisa ficar do lado de fora da sessão.</p></div></details>
-        <details><summary>Preciso ter depressão pós-parto para procurar a Fernanda?<svg class="icon" aria-hidden="true"><use href="#icon-chevron"/></svg></summary><div class="faq-answer"><p>Não. Você não precisa ter um diagnóstico para buscar acompanhamento. Pode conversar sobre as mudanças, dúvidas e sentimentos que está vivendo.</p></div></details>
-        <details><summary>As sessões são presenciais?<svg class="icon" aria-hidden="true"><use href="#icon-chevron"/></svg></summary><div class="faq-answer"><p>Não. O atendimento é online, permitindo que você participe de casa ou de outro lugar em que tenha privacidade.</p></div></details>
-        <details><summary>Atende mulheres de outras cidades?<svg class="icon" aria-hidden="true"><use href="#icon-chevron"/></svg></summary><div class="faq-answer"><p>Sim. O atendimento online permite acompanhar mulheres de diferentes regiões do Brasil e brasileiras que vivem no exterior.</p></div></details>
-        <details><summary>A psicanálise substitui o acompanhamento médico para depressão pós-parto?<svg class="icon" aria-hidden="true"><use href="#icon-chevron"/></svg></summary><div class="faq-answer"><p>Não. Quando há suspeita de depressão pós-parto, é importante buscar avaliação de um profissional de saúde habilitado. A psicanálise pode integrar o cuidado, conforme a necessidade de cada mulher.</p></div></details>
+        <details><summary>Preciso ter depressão pós-parto para buscar acompanhamento?<svg class="icon" aria-hidden="true"><use href="#icon-chevron"/></svg></summary><div class="faq-answer"><p>Não. Você não precisa ter um diagnóstico para buscar acompanhamento. Pode conversar sobre as mudanças, dúvidas e sentimentos que está vivendo.</p></div></details>
+        <details><summary>As sessões são presenciais?<svg class="icon" aria-hidden="true"><use href="#icon-chevron"/></svg></summary><div class="faq-answer"><p>Não. Atendo online, permitindo que você participe de casa ou de outro lugar em que tenha privacidade.</p></div></details>
+        <details><summary>Você atende mulheres de outras cidades?<svg class="icon" aria-hidden="true"><use href="#icon-chevron"/></svg></summary><div class="faq-answer"><p>Sim. Atendo online mulheres de diferentes regiões do Brasil e brasileiras que vivem no exterior.</p></div></details>
+        <details><summary>A psicanálise substitui o acompanhamento médico para depressão pós-parto?<svg class="icon" aria-hidden="true"><use href="#icon-chevron"/></svg></summary><div class="faq-answer"><p>Não. Quando há suspeita de depressão pós-parto, é importante buscar avaliação de um profissional de saúde habilitado. Meu trabalho pode integrar o cuidado, conforme a necessidade de cada mulher.</p></div></details>
       </div>
     </div>
   </section>
@@ -281,7 +283,7 @@
     <div class="container closing-content">
       <h2 id="closing-title">Você também merece <em class="hl">um espaço</em></h2>
       <p>Entre tantos cuidados, mudanças e expectativas, pode ser difícil encontrar um momento para olhar para o que você está vivendo.</p>
-      <p>Se sentir que gostaria de conhecer o acompanhamento, estou aqui para conversar.</p>
+      <p>Se sentir que gostaria de conhecer meu trabalho, estou aqui para conversar.</p>
       <p>Você pode começar tirando suas dúvidas, sem precisar tomar uma decisão agora.</p>
       <a class="btn btn--primary contact-trigger" href="#contato"><svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"/></svg> Agende seu atendimento <svg class="icon icon--small" aria-hidden="true"><use href="#icon-arrow"/></svg></a>
     </div>
@@ -294,7 +296,7 @@
     <div class="footer-brand">
       <div class="brand brand--footer"><img class="brand-mark brand-logo" src="assets/logo_fernanda.png" alt="" aria-hidden="true" width="672" height="474" decoding="async"><span class="brand-label"><strong>Fernanda Rodrigues</strong><span>PSICANALISTA</span></span></div>
       <p>Psicanalista | Gestação e puerpério</p>
-      <p>Atendimento online.</p>
+      <p>Atendo online.</p>
     </div>
     <nav class="footer-nav" aria-label="Links do rodapé">
       <span class="footer-pending" title="Endereço da página geral aguardando confirmação">Página geral</span>
@@ -307,7 +309,7 @@
 </footer>
 
 <!-- Botão flutuante do WhatsApp (fixo no canto direito, acompanha a rolagem) -->
-<a class="wa-float contact-trigger" href="#contato" aria-label="Agendar atendimento com a Fernanda pelo WhatsApp"><svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"/></svg></a>
+<a class="wa-float contact-trigger" href="#contato" aria-label="Agendar atendimento comigo pelo WhatsApp"><svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"/></svg></a>
 
 <!-- CTAs não inventam número. Para ativar o link real, preencher WHATSAPP_NUMBER em js/script.js. -->
 <dialog id="contact-dialog" class="contact-dialog" aria-labelledby="dialog-title">
