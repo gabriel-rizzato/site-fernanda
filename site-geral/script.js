@@ -111,3 +111,21 @@ document.querySelectorAll('.benefit > summary, .process-item > summary').forEach
 
 // Garante a classe "js" (também definida no <head>) usada pelas animações de entrada
 document.documentElement.classList.add('js');
+
+// Botões "Ver mais" (só aparecem no celular): mostram ou escondem os parágrafos 2 e 3 de cada bloco.
+document.querySelectorAll('.ver-mais').forEach(botao => {
+  botao.addEventListener('click', () => {
+    const bloco = botao.closest('[data-mais]');
+    if (!bloco) return;
+    const aberto = bloco.classList.toggle('mais-aberto');
+    botao.setAttribute('aria-expanded', String(aberto));
+    const rotulo = botao.querySelector('span');
+    if (rotulo) rotulo.textContent = aberto ? 'Ver menos' : 'Ver mais';
+  });
+});
+document.querySelectorAll('.faq-item').forEach(function (item) {
+  item.addEventListener('toggle', function () {
+    if (!item.open) return;
+    document.querySelectorAll('.faq-item[open]').forEach(function (o) { if (o !== item) o.open = false; });
+  });
+});

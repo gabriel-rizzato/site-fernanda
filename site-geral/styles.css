@@ -873,3 +873,142 @@ h1 em, h2 em, h3 em { font-family: var(--serif); font-style: italic; font-weight
   .recognition-list li:nth-child(3) { --d: .7s; }
   .recognition-list li:nth-child(4) { --d: .85s; }
 }
+@media (max-width: 900px) {
+  .hero { display: grid; grid-template-columns: 1fr; grid-template-rows: auto auto; min-height: 0; background: #f6e9df; overflow: hidden; isolation: isolate; }
+  .hero::before, .hero::after { content: none; }
+  .hero-photo { display: block; grid-area: 1 / 1; position: relative; inset: auto; right: auto; bottom: auto; width: 100%; aspect-ratio: 1 / .84; z-index: 0; background: url('assets/img/fundo-cenario-sage.jpg') 100% 0 / 200% auto no-repeat; -webkit-mask-image: linear-gradient(180deg,#000 80%,transparent 100%); mask-image: linear-gradient(180deg,#000 80%,transparent 100%); }
+  .hero-cutout { display: block; grid-area: 1 / 1; position: relative; z-index: 1; width: 100%; height: 100%; min-height: 0; max-width: none; object-fit: cover; object-position: 50% 0; pointer-events: none; -webkit-mask-image: linear-gradient(180deg,#000 80%,transparent 100%); mask-image: linear-gradient(180deg,#000 80%,transparent 100%); }
+  .hero-inner { grid-area: 2 / 1; min-height: 0 !important; display: block; padding: 0 0 34px; }
+  .hero-copy { max-width: 100%; width: 100%; padding: 6px 4px 0; }
+  .hero-subtitle { max-width: none; }
+}
+@media (min-width: 681px) and (max-width: 900px) {
+  .hero-photo { aspect-ratio: 1 / .6; background-size: 150% auto; }
+  .hero-copy { padding-top: 14px; }
+}
+@media (max-width: 900px) {
+  .hero-copy .pill-lg { display: flex; width: fit-content; margin-left: auto; margin-right: auto; }
+}
+@media (max-width: 900px) {
+  .quote-section { overflow-x: clip; }
+  .hero-inner { --gap: 34px; padding-bottom: calc(var(--gap) + 68px); }
+  .hero-subtitle + .hero-subtitle { margin-bottom: var(--gap); }
+  .hero-copy .pill-lg { margin-top: 0; }
+}
+@media (max-width: 680px) {
+  .hero-inner { padding-bottom: calc(var(--gap) + 27px); }
+}
+@media (max-width: 900px) {
+  .psycho-section { display: grid; grid-template-columns: 1fr; padding-top: 0; min-height: 0; overflow: hidden; background: #fbf6f1; }
+  .psycho-photo { display: block; grid-area: 1 / 1; position: relative; inset: auto; width: 100%; z-index: 0; }
+  .psycho-cutout { display: block; grid-area: 1 / 1; position: relative; z-index: 1; align-self: end; justify-self: start; max-width: none; height: auto; pointer-events: none; }
+  .psycho-section::after { content: ''; display: block; grid-area: 1 / 1; z-index: 2; pointer-events: none; position: static; width: auto; height: auto; }
+  .psycho-inner { grid-area: 2 / 1; display: block; min-height: 0; }
+}
+.ver-mais { display: none; }
+@media (max-width: 900px) {
+  .recognition-panel { padding: 26px 16px 20px; }
+  .recognition-list { display: grid; grid-template-columns: 1fr; gap: 12px; }
+  .recognition-list li { background: #fff; border: 1px solid rgba(47,107,79,.14); border-radius: 18px; padding: 14px 16px; box-shadow: 0 6px 18px rgba(50,60,50,.06); align-items: center; }
+  .psycho-photo { background: #3f6a37 url('assets/img/sessao-3-mobile.webp') 50% 0 / 100% auto no-repeat; }
+  .psycho-section::after { background: linear-gradient(180deg,rgba(251,246,241,0) 90%,#fbf6f1 100%); }
+  .psycho-content { padding: 36px 32px 44px; }
+  [data-mais]:not(.mais-aberto) .mais-mobile { display: none; }
+  .ver-mais { display: inline-flex; align-items: center; gap: 8px; margin: 6px 0 0; padding: 10px 22px; border: 1px solid var(--green); border-radius: 999px; background: transparent; color: var(--green); font: 600 15px/1 var(--sans); cursor: pointer; }
+  .ver-mais svg { width: 16px; height: 16px; transition: transform .25s; }
+  .mais-aberto .ver-mais svg { transform: rotate(180deg); }
+  .duo-bg { background: none; }
+  .duo-bg .benefits-section { background: #fbe3de url('assets/img/fundo-beneficios-mobile.webp') 50% 0 / 100% auto no-repeat; }
+  .duo-bg .process-section { background: #1d5a3e url('assets/img/fundo-atendimento-mobile.webp') 50% 0 / cover no-repeat; }
+}
+@media (max-width: 900px) {
+  .duo-bg .benefits-heading { position: relative; isolation: isolate; }
+  .duo-bg .benefits-heading::before { content: ''; position: absolute; z-index: -1; pointer-events: none; background: radial-gradient(closest-side, rgba(252,240,234,.95), rgba(252,240,234,.75) 55%, rgba(252,240,234,0)); }
+  .about-section.about-section { padding: 72px 0 64px; }
+  .about-section .about-inner { gap: 68px; }
+  .about-copy h2 { font-size: clamp(30px,8.6vw,38px); line-height: 1.06; }
+  .about-copy h2 em { white-space: nowrap; }
+  .about-role { margin-bottom: 18px; }
+  .quote-section { padding: 18px 0 44px; }
+  .sq-bg::before { transform: none; background: url('assets/img/fundo-jardim-lirios-mobile.jpg') center / cover no-repeat; }
+  .online-photo { background-image: url('assets/img/atendimento-online-mobile.jpg'); }
+  .contact-section::before { transform: none; background: linear-gradient(rgba(252,246,238,.4),rgba(252,246,238,.4)), url('assets/img/fundo-botanica-mobile.jpg') center / cover no-repeat; }
+}
+@media (max-width: 900px) {
+  .duo-bg { overflow-x: clip; }
+}
+@media (max-width: 900px) {
+  .about-section.about-section { padding-bottom: 48px; }
+  .quote-section { padding-top: 14px; }
+  .faq-section { padding-top: 36px; }
+  .faq-section .faq-photo { bottom: auto; }
+}
+@media (max-width: 900px) {
+  .duo-bg .benefits-heading { text-align: left; margin: 0 0 40px; }
+  .duo-bg .benefits-heading h2 { text-align: left; font-size: clamp(30px,8.8vw,38px); max-width: 62%; }
+  .duo-bg .benefits-heading::before { inset: -30px 30% -30px -14%; }
+}
+@media (max-width: 900px) {
+  .duo-bg .benefits-section { padding-top: 30px; }
+  .duo-bg .benefits-heading { margin-bottom: 30px; }
+}
+@media (max-width: 900px) {
+  .duo-bg .benefits-section { padding-bottom: 6px; }
+  .duo-bg .process-section { margin-top: 0; }
+}
+@media (max-width: 900px) {
+  .about-copy h2 em { font-size: 1.26em; }
+  .sq-bg .quote-section { background: url('assets/img/fundo-botanica-mobile.jpg') center / cover no-repeat; }
+  .online-section { display: block; padding: 0 0 44px; }
+  .online-photo { top: 0; bottom: auto; }
+  .online-text { background: rgba(252,247,243,.9); }
+  .faq-section .faq-photo { top: 0; }
+}
+@media (max-width: 900px) {
+  .faq-section .faq-heading { position: relative; isolation: isolate; }
+  .faq-section .faq-heading::before { content: ''; position: absolute; z-index: -1; inset: -16px -30% -10px -14%; pointer-events: none; }
+}
+@media (max-width: 900px) {
+  .online-photo { background-size: 100% auto; background-repeat: no-repeat; }
+}
+@media (max-width: 900px) {
+  .online-photo { height: 457px; background-position: 0 -43px; }
+  .online-section::after { background: linear-gradient(180deg,rgba(250,246,241,0) 0,rgba(250,246,241,0) 350px,#faf6f1 457px); }
+  .online-inner { padding-top: 264px; }
+}
+@media (max-width: 900px) {
+  .duo-bg .process-section { background-color: #1d5a3e; background-repeat: no-repeat; }
+}
+.br-m { display: none; }
+@media (max-width: 900px) {
+  .br-d { display: none; }
+  .br-m { display: inline; }
+  .about-role { font-size: 9px; letter-spacing: .14em; }
+}
+@media (max-width: 900px) {
+  .duo-bg .process-section { background-image: url('assets/img/fundo-atendimento-mobile.webp'); background-size: cover; background-position: 50% 0; padding-top: 88px; }
+}
+@media (max-width: 900px) {
+  .about-role { display: none; }
+}
+@media (max-width: 900px) {
+  .psycho-cutout { width: 140%; margin-left: -40%; }
+}
+@media (max-width: 900px) {
+  .faq-section .faq-photo { height: 440px; background-size: 100% auto; background-position: 0 0; }
+  .faq-section .faq-heading { margin-bottom: 300px; }
+}
+@media (max-width: 900px) {
+  .faq-section .faq-heading h2 em { display: block; }
+  .faq-section .faq-heading::before { background: radial-gradient(ellipse at 25% 50%, rgba(255,247,242,.3) 0%, rgba(255,247,242,.16) 50%, rgba(255,247,242,0) 80%); }
+}
+@media (max-width: 900px) {
+  .faq-section .faq-heading h2 { padding-left: 22px; }
+  .faq-section .faq-heading h2 em { padding-left: 23px; }
+}
+@media (max-width: 900px) {
+  .psycho-photo { aspect-ratio: auto; height: calc(100vw - 37px); background-position: 50% -37px; }
+}
+@media (max-width: 900px) {
+  .faq-section .faq-photo { -webkit-mask-image: linear-gradient(180deg,#000 93%,transparent 100%); mask-image: linear-gradient(180deg,#000 93%,transparent 100%); }
+}
