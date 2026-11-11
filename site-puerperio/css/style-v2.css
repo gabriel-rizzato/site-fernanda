@@ -890,3 +890,16 @@ h3,.therapy-intro h3,.online-text h3,.about-content h3,.info-card h3,.health-adv
   .fase-page--right{padding-bottom:70px}
   .fase-mom{bottom:0}
 }
+
+/* Ícones dos cartões "Como a terapia ajuda" (desktop e mobile): mesma espessura de linha, cor, tamanho visual e fundo (11/11/2026) */
+.tp-card:not(.tp-card--feature) .tp-ico{background:rgba(242,214,216,.6)}
+.tp-card:not(.tp-card--feature) .tp-ico .icon{color:var(--accent);stroke:currentColor;fill:none;stroke-width:1.7px;stroke-linecap:round;stroke-linejoin:round}
+.tp-card:not(.tp-card--feature) .tp-ico .icon *{vector-effect:non-scaling-stroke}
+
+/* Mobile · Atendimento online: nova foto de fundo (mesa em luz suave) com o texto direto sobre ela (11/11/2026) */
+@media(max-width:700px){
+  .online{background:#e3c9b5 url('../assets/atendimento_online_mobile.webp') 30% top/150% auto no-repeat}
+  .online-banner{min-height:0;align-items:flex-start}
+  .online-banner:before{display:none}
+  .online-text{width:100%;margin:calc(54vw + 20px) 0 0;padding:0 6px 60px;background:none;border:0;border-radius:0;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+}
