@@ -9,9 +9,29 @@ const WHATSAPP_NUMBER = '5511988323140';
 const GESTATION_URL = '';
 const WA_MESSAGE = 'Olá, Fernanda! Conheci seu site e gostaria de saber mais sobre o atendimento de psicanálise online. Poderia me explicar como funciona e quais são as condições?';
 
+// Guarda gclid/fbclid/etc. da URL no localStorage para sobreviver a navegação dentro do site.
+(function captureTrackingParams() {
+  const params = new URLSearchParams(window.location.search);
+  ['gclid', 'gbraid', 'wbraid', 'fbclid', 'ttclid', 'msclkid'].forEach(key => {
+    const value = params.get(key);
+    if (value) localStorage.setItem(key, value);
+  });
+})();
+
+// Pega o primeiro click id disponível (URL ou localStorage) e devolve um ticket curto de 6
+// caracteres para anexar na mensagem, sem poluir com o id completo (70+ caracteres).
+function getTrackingTicket() {
+  const params = new URLSearchParams(window.location.search);
+  let rawId = null;
+  for (const key of ['gclid', 'gbraid', 'wbraid', 'fbclid', 'ttclid', 'msclkid']) {
+    const value = params.get(key) || localStorage.getItem(key);
+    if (value) { rawId = value; break; }
+  }
+  return rawId && rawId.length > 26 ? rawId.slice(26, 32).toUpperCase() : null;
+}
+
 const nav = document.querySelector('#main-nav');
 const menuToggle = document.querySelector('#menu-toggle');
-const contactDialog = document.querySelector('#contact-dialog');
 const pageDialog = document.querySelector('#page-dialog');
 const pageLink = document.querySelector('#gestation-link');
 
@@ -35,14 +55,16 @@ menuToggle?.addEventListener('click', () => {
 document.querySelectorAll('.nav a').forEach(link => link.addEventListener('click', closeNav));
 document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeNav(); });
 
-// Todos os botões usam a mesma mensagem exata da copy aprovada.
+// Todos os botões usam a mesma mensagem exata da copy aprovada, com o ticket de rastreamento anexado quando houver.
 document.querySelectorAll('.js-whatsapp').forEach(link => {
   if (/^\d{12,15}$/.test(WHATSAPP_NUMBER)) {
-    link.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WA_MESSAGE)}`;
+    const ticket = getTrackingTicket();
+    const message = ticket ? `${WA_MESSAGE}\n\n*id: ${ticket}*` : WA_MESSAGE;
+    link.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
   } else {
-    link.addEventListener('click', event => { event.preventDefault(); openDialog(contactDialog); });
+    link.addEventListener('click', event => { event.preventDefault(); alert('Configure o número profissional do WhatsApp no arquivo script.js.'); });
   }
 });
 
@@ -53,21 +75,6 @@ document.querySelectorAll('#gestation-link, .js-gestation').forEach(btn => btn.a
   else openDialog(pageDialog);
 }));
 document.querySelectorAll('.dialog-dismiss').forEach(btn => btn.addEventListener('click', () => pageDialog?.close()));
-
-const copyButton = document.querySelector('#copy-message');
-copyButton?.addEventListener('click', async () => {
-  try {
-    if (navigator.clipboard?.writeText) await navigator.clipboard.writeText(WA_MESSAGE);
-    else {
-      const input = document.createElement('textarea'); input.value = WA_MESSAGE;
-      input.style.position='fixed'; input.style.opacity='0'; document.body.appendChild(input);
-      input.select(); document.execCommand('copy'); input.remove();
-    }
-    copyButton.textContent = 'Mensagem copiada';
-  } catch {
-    copyButton.textContent = 'Selecione e copie a mensagem acima';
-  }
-});
 
 // Botão central abre/fecha todas as quatro descrições, e cada cartão é acionável individualmente.
 const processEntries = [...document.querySelectorAll('.process-item')];

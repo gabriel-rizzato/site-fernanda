@@ -6,6 +6,27 @@
 const WHATSAPP_NUMBER = '5511988323140';
 const WHATSAPP_TEXT = 'Olá, Fernanda! Conheci seu trabalho pela página sobre gestação e puerpério. Gostaria de saber mais sobre o acompanhamento e como funcionam as sessões online.';
 
+// Guarda gclid/fbclid/etc. da URL no localStorage para sobreviver a navegação dentro do site.
+(function captureTrackingParams() {
+  const params = new URLSearchParams(window.location.search);
+  ['gclid', 'gbraid', 'wbraid', 'fbclid', 'ttclid', 'msclkid'].forEach(key => {
+    const value = params.get(key);
+    if (value) localStorage.setItem(key, value);
+  });
+})();
+
+// Pega o primeiro click id disponível (URL ou localStorage) e devolve um ticket curto de 6
+// caracteres para anexar na mensagem, sem poluir com o id completo (70+ caracteres).
+function getTrackingTicket() {
+  const params = new URLSearchParams(window.location.search);
+  let rawId = null;
+  for (const key of ['gclid', 'gbraid', 'wbraid', 'fbclid', 'ttclid', 'msclkid']) {
+    const value = params.get(key) || localStorage.getItem(key);
+    if (value) { rawId = value; break; }
+  }
+  return rawId && rawId.length > 26 ? rawId.slice(26, 32).toUpperCase() : null;
+}
+
 const nav = document.querySelector('#navegacao');
 const navToggle = document.querySelector('.menu-toggle');
 if (nav && navToggle) {
@@ -22,34 +43,18 @@ if (nav && navToggle) {
   }));
 }
 
-const contactDialog = document.querySelector('#contact-dialog');
 document.querySelectorAll('.contact-trigger').forEach(link => {
   link.addEventListener('click', evt => {
     const number = WHATSAPP_NUMBER.replace(/\D/g,'');
     evt.preventDefault();
     if (number.length >= 12 && number.length <= 15) {
-      window.open(`https://wa.me/${number}?text=${encodeURIComponent(WHATSAPP_TEXT)}`, '_blank', 'noopener,noreferrer');
-    } else if (contactDialog && typeof contactDialog.showModal === 'function') {
-      contactDialog.showModal();
+      const ticket = getTrackingTicket();
+      const message = ticket ? `${WHATSAPP_TEXT}\n\n*id: ${ticket}*` : WHATSAPP_TEXT;
+      window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
     } else {
       alert('Configure o número profissional do WhatsApp no arquivo js/script.js.');
     }
   });
-});
-if(contactDialog) {
-  const close = contactDialog.querySelector('[data-dialog-close]');
-  if(close) close.addEventListener('click', () => contactDialog.close());
-  contactDialog.addEventListener('click', evt => {if (evt.target === contactDialog) contactDialog.close();});
-}
-const copyButton = document.querySelector('#copy-message');
-if(copyButton) copyButton.addEventListener('click', async () => {
-  const feedback = document.querySelector('#copy-feedback');
-  try {
-    await navigator.clipboard.writeText(WHATSAPP_TEXT);
-    feedback.textContent = 'Mensagem copiada.';
-  } catch(e) {
-    feedback.textContent = 'Se a cópia automática estiver bloqueada, selecione a mensagem acima e copie manualmente.';
-  }
 });
 
 // Acessibilidade: mantém um painel educativo aberto de cada vez, sem remover conteúdos do HTML.
