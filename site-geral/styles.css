@@ -358,7 +358,7 @@ p { line-height: 1.59; }
 .about-copy { grid-column: 2; padding: 60px 0 60px 30px; }
 .about-copy p { font: 400 17px/1.65 var(--sans); color: #2b302b; margin-bottom: 14px; }
 .online-section { position: relative; overflow: hidden; isolation: isolate; display: flex; align-items: center; background: #f6eee6; }
-.online-photo { position: absolute; z-index: -2; background: url('assets/img/atendimento-online.jpg') 20% center / cover no-repeat; }
+.online-photo { position: absolute; z-index: -2; background: url('assets/img/atendimento-online.webp') 20% center / cover no-repeat; }
 .online-section::after { content: ''; position: absolute; inset: 0; z-index: -1; }
 .online-text .eyebrow { margin-bottom: 14px; }
 .online-text h2 { margin-bottom: 22px; }
@@ -553,7 +553,7 @@ h2 { font-size: clamp(36px,3.7vw,56px); }
   .header-container { margin-left: 11vw; }
 }
 @media (min-width:901px) {
-  .stage { background: #f3e2d6 url('assets/img/fundo-cenario-sage.jpg') 0 0 / 100% 100% no-repeat; }
+  .stage { background: #f3e2d6 url('assets/img/fundo-cenario-sage.webp') 0 0 / 100% 100% no-repeat; }
   .stage::after { content: ''; position: absolute; inset: 0; z-index: 2; background: url('assets/img/cenario-borda-circulo-sage.webp') 0 0 / 100% 100% no-repeat; pointer-events: none; }
   .stage .psycho-section { background: none; }
   .psycho-cutout { bottom: 0; z-index: 1; filter: none; }
@@ -633,7 +633,7 @@ h1, h2, h3 { font-family: var(--sans); font-weight: 300; letter-spacing: -.035em
 h3 { font-weight: 400; letter-spacing: -.02em; }
 h1 em, h2 em, h3 em { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.3em; letter-spacing: -.005em; line-height: .85; }
 .brand-name { letter-spacing: -.03em; }
-.duo-bg { background: #f6ebe2 url('assets/img/fundo-beneficios-atendimento.jpg') 0 0 / 100% 100% no-repeat; }
+.duo-bg { background: #f6ebe2 url('assets/img/fundo-beneficios-atendimento.webp') 0 0 / 100% 100% no-repeat; }
 .duo-bg .benefits-section, .duo-bg .process-section { background: transparent; }
 .duo-bg .process-section { color: #fff; }
 .duo-bg .process-heading h2 { color: #fff; }
@@ -742,7 +742,7 @@ h1 em, h2 em, h3 em { font-family: var(--serif); font-style: italic; font-weight
 .sq-bg .about-section, .sq-bg .about-section.about-section, .sq-bg .quote-section { background: transparent; }
 .sq-bg .quote-section::before { content: none; }
 .sq-bg { position: relative; isolation: isolate; background: #fbf1ea; }
-.sq-bg::before { content: ''; position: absolute; inset: 0; z-index: -1; background: url('assets/img/fundo-jardim-lirios.jpg') center / cover no-repeat; transform: scaleY(-1); }
+.sq-bg::before { content: ''; position: absolute; inset: 0; z-index: -1; background: url('assets/img/fundo-jardim-lirios.webp') center / cover no-repeat; transform: scaleY(-1); }
 @media (min-width:901px) {
   .stage .psycho-inner { align-items: center; }
   .stage .psycho-content { padding: clamp(40px,4cqw,72px) 5cqw clamp(40px,4cqw,72px) 0; align-self: center; }
@@ -780,7 +780,7 @@ h1 em, h2 em, h3 em { font-family: var(--serif); font-style: italic; font-weight
 .contact-section { position: relative; isolation: isolate; background: #f3ead9; }
 .contact-section::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 1; }
 .contact-section::before { transform: none; }
-.contact-section::before { background: radial-gradient(ellipse 26% 80% at 16% 56%, rgba(252,246,238,.6) 0%, rgba(252,246,238,.38) 55%, rgba(252,246,238,0) 100%), linear-gradient(rgba(252,246,238,.52), rgba(252,246,238,.52)), url('assets/img/fundo-botanica-suave.jpg') center / cover no-repeat; }
+.contact-section::before { background: radial-gradient(ellipse 26% 80% at 16% 56%, rgba(252,246,238,.6) 0%, rgba(252,246,238,.38) 55%, rgba(252,246,238,0) 100%), linear-gradient(rgba(252,246,238,.52), rgba(252,246,238,.52)), url('assets/img/fundo-botanica-suave.webp') center / cover no-repeat; }
 @media (min-width:901px) {
   .stage::before { content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none; }
 }
@@ -815,7 +815,7 @@ h1 em, h2 em, h3 em { font-family: var(--serif); font-style: italic; font-weight
   .recognition-list li img { width: 42px; height: 42px; }
 }
 @media (min-width:901px) {
-  .faq-photo { left: 0; right: 0; width: 100%; transform: none; filter: none; -webkit-mask-image: none; mask-image: none; background: url('assets/img/fundo-faq-poltrona.jpg') right center / cover no-repeat; }
+  .faq-photo { left: 0; right: 0; width: 100%; transform: none; filter: none; -webkit-mask-image: none; mask-image: none; background: url('assets/img/fundo-faq-poltrona.webp') right center / cover no-repeat; }
 }
 .recognition-list li:nth-child(1) img { transform: scale(1.12); }
 .recognition-list li:nth-child(2) img { transform: translateY(5%) scale(1.14); }
@@ -876,7 +876,7 @@ h1 em, h2 em, h3 em { font-family: var(--serif); font-style: italic; font-weight
 @media (max-width: 900px) {
   .hero { display: grid; grid-template-columns: 1fr; grid-template-rows: auto auto; min-height: 0; background: #f6e9df; overflow: hidden; isolation: isolate; }
   .hero::before, .hero::after { content: none; }
-  .hero-photo { display: block; grid-area: 1 / 1; position: relative; inset: auto; right: auto; bottom: auto; width: 100%; aspect-ratio: 1 / .84; z-index: 0; background: url('assets/img/fundo-cenario-sage.jpg') 100% 0 / 200% auto no-repeat; }
+  .hero-photo { display: block; grid-area: 1 / 1; position: relative; inset: auto; right: auto; bottom: auto; width: 100%; aspect-ratio: 1 / .84; z-index: 0; background: url('assets/img/fundo-cenario-sage.webp') 100% 0 / 200% auto no-repeat; }
   .hero-cutout { display: block; grid-area: 1 / 1; position: relative; z-index: 1; width: 100%; height: 100%; min-height: 0; max-width: none; object-fit: cover; object-position: 50% 0; pointer-events: none; }
   .hero-inner { grid-area: 2 / 1; min-height: 0 !important; display: block; padding: 0 0 34px; }
   .hero-copy { max-width: 100%; width: 100%; padding: 6px 4px 0; }
@@ -930,9 +930,9 @@ h1 em, h2 em, h3 em { font-family: var(--serif); font-style: italic; font-weight
   .about-copy h2 em { white-space: nowrap; }
   .about-role { margin-bottom: 18px; }
   .quote-section { padding: 18px 0 44px; }
-  .sq-bg::before { transform: none; background: url('assets/img/fundo-jardim-lirios-mobile.jpg') center / cover no-repeat; }
-  .online-photo { background-image: url('assets/img/atendimento-online-mobile.jpg'); }
-  .contact-section::before { transform: none; background: linear-gradient(rgba(252,246,238,.4),rgba(252,246,238,.4)), url('assets/img/fundo-botanica-mobile.jpg') center / cover no-repeat; }
+  .sq-bg::before { transform: none; background: url('assets/img/fundo-jardim-lirios-mobile.webp') center / cover no-repeat; }
+  .online-photo { background-image: url('assets/img/atendimento-online-mobile.webp'); }
+  .contact-section::before { transform: none; background: linear-gradient(rgba(252,246,238,.4),rgba(252,246,238,.4)), url('assets/img/fundo-botanica-mobile.webp') center / cover no-repeat; }
 }
 @media (max-width: 900px) {
   .duo-bg { overflow-x: clip; }
@@ -956,7 +956,7 @@ h1 em, h2 em, h3 em { font-family: var(--serif); font-style: italic; font-weight
 }
 @media (max-width: 900px) {
   .about-copy h2 em { font-size: 1.26em; }
-  .sq-bg .quote-section { background: url('assets/img/fundo-botanica-mobile.jpg') center / cover no-repeat; }
+  .sq-bg .quote-section { background: url('assets/img/fundo-botanica-mobile.webp') center / cover no-repeat; }
   .online-section { display: block; padding: 0 0 44px; }
   .online-text { background: rgba(252,247,243,.9); }
 }

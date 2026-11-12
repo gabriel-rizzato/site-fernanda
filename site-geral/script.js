@@ -6,7 +6,7 @@
   Defina GESTATION_URL somente quando a outra página estiver publicada.
 */
 const WHATSAPP_NUMBER = '5511988323140';
-const GESTATION_URL = '';
+const GESTATION_URL = '/puerperio/';
 const WA_MESSAGE = 'Olá, Fernanda! Conheci seu site e gostaria de saber mais sobre o atendimento de psicanálise online. Poderia me explicar como funciona e quais são as condições?';
 
 // Guarda gclid/fbclid/etc. da URL no localStorage para sobreviver a navegação dentro do site.

@@ -31,7 +31,7 @@ a{color:inherit}button,summary{font:inherit}button{cursor:pointer}img{display:bl
 /* 8 CLOSING — approved gestation photo with all final copy readable */
 .closing{min-height:650px;position:relative;isolation:isolate;display:flex;align-items:center;overflow:hidden;background:#ac707b url('../assets/convite_gestante.webp') center/cover no-repeat}.closing-overlay{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(64,39,43,.34),rgba(84,49,54,.15) 45%,transparent 72%)}.closing-content{padding:93px 0 98px;color:var(--base)}.closing-content h2{max-width:590px;font-size:clamp(4.2rem,5.4vw,6.2rem);color:#fff9f6;line-height:.9}.closing-content p:not(.eyebrow){max-width:520px;font-size:15px;line-height:1.55}.closing-content .btn{margin-top:23px}.eyebrow--light{color:#ffedef}.closing-content .accent-line{margin:25px 0}
 /* 9 FOOTER */
-.site-footer{background:linear-gradient(90deg,#faf2f0,var(--pink-bg));color:var(--ink);padding:50px 0 26px}.footer-main{display:flex;gap:70px;justify-content:space-between;align-items:center}.brand--footer{min-width:unset;display:flex}.brand--footer .brand-mark{height:64px;width:58px}.brand--footer .brand-label strong{font-size:30px}.footer-brand p{font-size:12px;margin:3px 0 0 70px;line-height:1.5}.footer-nav{display:flex;gap:27px;justify-content:flex-end;align-items:center;flex-wrap:wrap}.footer-nav a,.footer-nav span{font-size:12px;color:var(--wine);font-weight:600;text-decoration:none}.footer-nav a:hover{text-decoration:underline}.footer-pending{cursor:help;opacity:.7}.footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:35px;padding-top:18px;border-top:1px solid var(--line);font-size:11px;color:#574e4b}.footer-bottom span:last-child{text-align:right}
+.site-footer{background:linear-gradient(90deg,#faf2f0,var(--pink-bg));color:var(--ink);padding:50px 0 26px}.footer-main{display:flex;gap:70px;justify-content:space-between;align-items:center}.brand--footer{min-width:unset;display:flex}.brand--footer .brand-mark{height:64px;width:58px}.brand--footer .brand-label strong{font-size:30px}.footer-brand p{font-size:12px;margin:3px 0 0 70px;line-height:1.5}.footer-nav{display:flex;gap:27px;justify-content:flex-end;align-items:center;flex-wrap:wrap}.footer-nav a,.footer-nav span{font-size:12px;color:var(--wine);font-weight:600;text-decoration:none}.footer-nav a:hover{text-decoration:underline}.footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:35px;padding-top:18px;border-top:1px solid var(--line);font-size:11px;color:#574e4b}.footer-bottom span:last-child{text-align:right}
 /* WHATSAPP PREVIEW MODE */
 .contact-dialog{position:fixed;max-height:min(85vh,680px);overflow:auto;width:min(calc(100vw - 30px),510px);padding:40px;background:#fff9f8;border:none;border-radius:25px;box-shadow:0 30px 100px rgba(36,27,30,.4);color:var(--ink)}.contact-dialog::backdrop{background:rgba(36,27,30,.63)}.contact-dialog h2{font-size:49px;color:var(--wine);margin-bottom:19px}.contact-dialog p{font-size:14px}.contact-dialog blockquote{margin:22px 0;padding:22px;background:var(--pink-bg);border-left:3px solid var(--pink);border-radius:10px;font-size:15px}.contact-dialog .dialog-close{position:absolute;right:20px;top:13px;border:0;background:none;font-size:34px;color:var(--wine);line-height:1.2;cursor:pointer}.dialog-ornament{display:block;color:var(--rose-ink);margin-bottom:12px}.dialog-ornament .icon{height:49px;width:49px}.copy-feedback{min-height:22px;margin-top:12px!important;color:var(--wine)}
 @keyframes soft-reveal{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
@@ -478,7 +478,7 @@ h3,.therapy-intro h3,.online-text h3,.about-content h3,.info-card h3,.health-adv
 @media(max-width:980px){.faq-heart{width:240px;margin:18px 0 0 40%}}
 @media(max-width:700px){.faq-heart{width:200px;margin:12px 0 0 30%}.faq-list summary{padding:18px 20px}}
 @media(max-width:980px){.faq-panel{grid-template-columns:1fr;gap:36px}}
-/* Dúvidas: lírio colorido da referência (assets/lirio_duvidas.png), bordas esfumadas no fundo; sem o coração */
+/* Dúvidas: lírio colorido da referência (assets/lirio_duvidas.webp), bordas esfumadas no fundo; sem o coração */
 .faq-lily{left:-10px;bottom:0;width:360px;opacity:1;transform:none;mix-blend-mode:multiply;-webkit-mask-image:radial-gradient(ellipse 62% 60% at 48% 48%,#000 55%,transparent 100%);mask-image:radial-gradient(ellipse 62% 60% at 48% 48%,#000 55%,transparent 100%)}
 .faq-heart{display:none}
 @media(max-width:1230px){.faq-lily{width:290px}}
@@ -560,7 +560,7 @@ h3,.therapy-intro h3,.online-text h3,.about-content h3,.info-card h3,.health-adv
 }
 @media(max-width:700px){.about{padding-bottom:calc(var(--faq-top) + 60px)}.faq{padding-top:calc(var(--faq-top) + 40px)}}
 
-/* ===== Nova logo (assets/logo_fernanda.png, fundo transparente) ===== */
+/* ===== Nova logo (assets/logo_fernanda.webp, fundo transparente) ===== */
 .brand-logo{display:block;height:auto;object-fit:contain;stroke:none;fill:none}
 .site-header .brand-mark.brand-logo{width:76px;height:54px}
 .brand--footer .brand-mark.brand-logo{width:82px;height:58px}
@@ -811,7 +811,7 @@ h3,.therapy-intro h3,.online-text h3,.about-content h3,.info-card h3,.health-adv
 
   /* Fecho: nova foto */
   .closing{min-height:0;align-items:start;background:#b85e67}
-  .closing-overlay{top:auto;bottom:0;height:min(105vw,520px);background:url('../assets/convite_gestante_mobile.jpg') center bottom/cover no-repeat;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 26%);mask-image:linear-gradient(180deg,transparent 0,#000 26%)}
+  .closing-overlay{top:auto;bottom:0;height:min(105vw,520px);background:url('../assets/convite_gestante_mobile.webp') center bottom/cover no-repeat;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 26%);mask-image:linear-gradient(180deg,transparent 0,#000 26%)}
   .closing-content{padding-bottom:calc(min(105vw,520px) - 5px)}
 
   /* Painel "Ver mais sobre essa fase": tudo dentro do quadro */
@@ -867,7 +867,7 @@ h3,.therapy-intro h3,.online-text h3,.about-content h3,.info-card h3,.health-adv
   .fase-box[data-stage="0"] .fase-page--left{padding-bottom:84px}
 
   /* Fecho: texto sobre a foto, com degradê para dar leitura */
-  .closing{min-height:0;align-items:start;background:#b85e67 url('../assets/convite_gestante_mobile.jpg') 72% bottom/cover no-repeat}
+  .closing{min-height:0;align-items:start;background:#b85e67 url('../assets/convite_gestante_mobile.webp') 72% bottom/cover no-repeat}
   .closing-overlay{inset:0;top:0;bottom:0;height:auto;-webkit-mask-image:none;mask-image:none;
     background:linear-gradient(180deg,rgba(168,86,100,.94) 0%,rgba(168,86,100,.82) 42%,rgba(168,86,100,.4) 70%,rgba(168,86,100,.08) 100%)}
   .closing-content{padding-bottom:240px}
